@@ -6,6 +6,7 @@ public class GameGod : MonoBehaviour
 {
 	public int _maxAmmo;
 	public int _currentAmmo;
+	public int _currentScore;
 
 	private AudioSource _audioSource;
 
@@ -25,5 +26,10 @@ public class GameGod : MonoBehaviour
 		_audioSource.Stop();
 		_audioSource.clip = audioClip;
 		_audioSource.Play();
+	}
+
+	public void AddScore(int score)
+	{
+		_currentScore += score;
 	}
 }

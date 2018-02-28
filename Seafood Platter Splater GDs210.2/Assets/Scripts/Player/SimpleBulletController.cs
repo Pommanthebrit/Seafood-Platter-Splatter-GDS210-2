@@ -11,10 +11,11 @@ public class SimpleBulletController : MonoBehaviour
 	private void Start()
 	{
 		_rb = GetComponent<Rigidbody>();
+		_rb.velocity = transform.up * _speed;
 	}
 
-	private void FixedUpdate()
+	private void OnCollisionEnter(Collision other)
 	{
-		_rb.velocity = transform.up * _speed;
+		Destroy(this.gameObject);
 	}
 }
