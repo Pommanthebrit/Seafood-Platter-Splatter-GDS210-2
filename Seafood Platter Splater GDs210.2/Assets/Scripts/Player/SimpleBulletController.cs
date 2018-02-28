@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class SimpleBulletMove : MonoBehaviour 
+public class SimpleBulletController : MonoBehaviour 
 {
 	[SerializeField] private float _speed;
 	private Rigidbody _rb;
