@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
 	[SerializeField] private GameGod _gg; // Temp.
 	[SerializeField] private int _health;
 	[SerializeField] private int _scoreWorth;
+	[SerializeField] private bool _endangered;
 	private Rigidbody _rb;
 
 	private void Start()
