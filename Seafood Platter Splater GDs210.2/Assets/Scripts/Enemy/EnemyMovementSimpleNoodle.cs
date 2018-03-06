@@ -20,8 +20,6 @@ public class EnemyMovementSimpleNoodle : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		print(_rb.velocity.y);
-		print(_rising);
 		if(_rb.velocity.y > _velocityTurnPoint || _rb.velocity.y < -_velocityTurnPoint)
 		{
 			if(_rising)
