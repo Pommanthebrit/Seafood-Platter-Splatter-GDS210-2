@@ -17,6 +17,7 @@ public class EnemyMovementWaypointSimple : MonoBehaviour
 	{
 		_rb = GetComponent<Rigidbody>();
 		SetWaypoints();
+		SetupOther();
 	}
 
 	private void Update()
@@ -30,6 +31,7 @@ public class EnemyMovementWaypointSimple : MonoBehaviour
 	private void FixedUpdate()
 	{
 		MoveToNextWaypoint();
+		AddOtherMovement();
 	}
 
 	protected virtual void SetWaypoints()
@@ -57,5 +59,15 @@ public class EnemyMovementWaypointSimple : MonoBehaviour
 		Debug.Log (_targetWaypoint.position.ToString ());
 		Vector3 directionToWaypoint = (_targetWaypoint.position - transform.position).normalized;
 		_rb.MovePosition(transform.position+(directionToWaypoint * _speed*Time.fixedDeltaTime));
+	}
+
+	protected virtual void SetupOther()
+	{
+		
+	}
+
+	protected virtual void AddOtherMovement()
+	{
+		
 	}
 }
