@@ -5,6 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class EnemyMovementWaypointSimple : MonoBehaviour 
 {
+	[SerializeField] private bool _loop;
+	[SerializeField] private int _loopAmount;
+
 	[SerializeField] protected float _speed;
 	[SerializeField] protected Transform[] _waypoints;
 	[SerializeField] protected float _switchDistance;
@@ -12,6 +15,7 @@ public class EnemyMovementWaypointSimple : MonoBehaviour
 	protected Rigidbody _rb;
 
 	private int _targetWaypointIndex;
+	private int _currentLoop;
 
 	private void Start()
 	{
@@ -47,10 +51,16 @@ public class EnemyMovementWaypointSimple : MonoBehaviour
 		{
 			_targetWaypoint = _waypoints[_targetWaypointIndex];
 		}
-		else
+		else if(_loop && _currentLoop < _loopAmount || _loop && _loopAmount == 0)
 		{
+			_currentLoop++;
 			_targetWaypointIndex = 0;
 			_targetWaypoint = _waypoints[_targetWaypointIndex];
+		}
+		else
+		{
+			// Take fish score
+			Destroy(this.gameObject);
 		}
 	}
 
