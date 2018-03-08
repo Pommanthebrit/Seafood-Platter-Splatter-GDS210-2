@@ -12,7 +12,9 @@ public class SimpleBulletController : MonoBehaviour
 	private void Start()
 	{
 		_rb = GetComponent<Rigidbody>();
-		_rb.velocity = transform.up * _speed;
+		Camera c = Camera.main;
+		Vector3 mousePos = c.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 20f));
+		_rb.AddForce((mousePos - transform.position).normalized * _speed, ForceMode.VelocityChange);
 
 		Invoke("Destroy", _destroyTime);
 	}
