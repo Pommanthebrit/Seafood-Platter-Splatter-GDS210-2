@@ -5,8 +5,10 @@ using UnityEngine;
 // Spawns a specific object at point
 public class SpawnPoint : MonoBehaviour 
 {
-	public void SpawnObject(GameObject _objectToSpawn)
+	public void SpawnObject(GameObject _objectToSpawn, GameGod gg)
 	{
-		Instantiate(_objectToSpawn, transform.position, transform.rotation);
+		print("SP _gg: " + gg);
+		GameObject spawnedObject = Instantiate(_objectToSpawn, transform.position, transform.rotation);
+		spawnedObject.GetComponentInChildren<EnemyController>()._gg = gg;
 	}
 }

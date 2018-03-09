@@ -5,12 +5,14 @@ using UnityEngine;
 [System.Serializable]
 public class FishSpawnerController
 {
+	[HideInInspector] public GameGod _gg;
 	[SerializeField] private SpawnPoint _mySpawnPoint;
-	[SerializeField] private Fish[] _fishToSpawn;
+	public Fish[] _fishToSpawn;
 
+	private Round _round;
 	private List<FishSpawner> _fishSpawners;
 
-	void Start()
+	public void Start()
 	{
 		_fishSpawners = new List<FishSpawner>();
 
@@ -18,10 +20,13 @@ public class FishSpawnerController
 		{
 			FishSpawner fishSpawner = new FishSpawner(_fishToSpawn[index]._spawnFrequency, index, _fishToSpawn[index]._fishSpawnAmount, this);
 			_fishSpawners.Add(fishSpawner);
+			_gg._totalFish += _fishToSpawn[index]._fishSpawnAmount;
+
+			Debug.Log("Total Fish: " + _gg._totalFish);
 		}
 	}
 
-	void Update()
+	public void Update()
 	{
 		foreach(FishSpawner fishSpawner in _fishSpawners)
 		{
@@ -31,6 +36,7 @@ public class FishSpawnerController
 
 	public void SpawnFish(int fishSpawnID)
 	{
-		_mySpawnPoint.SpawnObject(_fishToSpawn[fishSpawnID]._fishPrefab);
+		Debug.Log("CRTL _gg: " + _gg);
+		_mySpawnPoint.SpawnObject(_fishToSpawn[fishSpawnID]._fishPrefab, _gg);
 	}
 }

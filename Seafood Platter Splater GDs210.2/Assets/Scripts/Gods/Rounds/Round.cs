@@ -7,5 +7,5 @@ using UnityEngine;
 public class Round : ScriptableObject 
 {
 	public int _perfectRoundBonus;
-	[SerializeField] private FishSpawnerController[] _fishSpawnerControllers;
+	public FishSpawnerController[] _fishSpawnerControllers;
 }

@@ -5,15 +5,27 @@ using UnityEngine;
 public class GameGod : MonoBehaviour 
 {
 	public int _maxAmmo;
-	public int _currentAmmo;
-	public int _currentScore;
+	[HideInInspector] public int _totalFish;
+	[HideInInspector] public int _currentAmmo;
+	[HideInInspector] public int _currentScore;
 
+	private RoundGod _roundGod;
 	private AudioSource _audioSource;
+
+	private void Awake()
+	{
+	}
 
 	private void Start()
 	{
+		_roundGod = GetComponent<RoundGod>();
 		_audioSource = GetComponent<AudioSource>();
 		ReplenishAmmo();
+	}
+
+	private void Update()
+	{
+		Debug.Log("Total Fish GG: " + _totalFish);
 	}
 
 	private void ReplenishAmmo()
@@ -26,6 +38,17 @@ public class GameGod : MonoBehaviour
 		_audioSource.Stop();
 		_audioSource.clip = audioClip;
 		_audioSource.Play();
+	}
+
+	public void ConfirmFishDeath(int score)
+	{
+		AddScore(score);
+		_totalFish = _totalFish - 1;
+
+		if(_totalFish < 1)
+		{
+			_roundGod.EndRound();
+		}
 	}
 
 	public void AddScore(int score)

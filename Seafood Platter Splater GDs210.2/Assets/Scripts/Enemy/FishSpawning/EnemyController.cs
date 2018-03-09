@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour 
 {
-	[SerializeField] private GameGod _gg; // Temp.
+	[HideInInspector] public GameGod _gg;
 	[SerializeField] private int _health;
 	[SerializeField] private int _scoreWorth;
 	[SerializeField] private bool _endangered;
@@ -37,6 +37,6 @@ public class EnemyController : MonoBehaviour
 	private void Die()
 	{
 		Destroy(this.gameObject);
-		_gg.AddScore(_scoreWorth);
+		_gg.ConfirmFishDeath(_scoreWorth);
 	}
 }

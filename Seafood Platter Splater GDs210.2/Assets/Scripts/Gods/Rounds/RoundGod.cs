@@ -10,14 +10,53 @@ public class RoundGod : MonoBehaviour {
 	// Setup how many fish FishSpawner can spawn
 	// Calculate automatic rounds after 20
 
-	public int _currentRound;
 	public Round[] _manualRounds;
+	[HideInInspector] public int _currentRound;
 
-	private int _fishToSpawn;
+
+	[HideInInspector] public int _fishLeftToSpawn;
 	private bool _roundInProgress;
-
+	private GameGod _gg;
 
 	private void Start()
 	{
+		_gg = GetComponent<GameGod>();
+
+		Debug.Log("GOD _gg: " + _gg);
+		foreach(FishSpawnerController fishSpawnerCtrl in _manualRounds[0]._fishSpawnerControllers)
+		{
+			fishSpawnerCtrl.Start();
+			fishSpawnerCtrl._gg = _gg;
+			foreach(Fish fish in fishSpawnerCtrl._fishToSpawn)
+				_gg._totalFish += fish._fishSpawnAmount;
+		}
+	}
+
+	private void Update()
+	{
+		foreach(FishSpawnerController fishSpawnerCtrl in _manualRounds[_currentRound]._fishSpawnerControllers)
+		{
+			fishSpawnerCtrl.Update();
+		}
+	}
+
+	public void EndRound()
+	{
+		_currentRound++;
+		if(_currentRound < _manualRounds.Length)
+		{
+			StartRound();
+		}
+	}
+
+	private void StartRound()
+	{
+		foreach(FishSpawnerController fishSpawnerCtrl in _manualRounds[_currentRound]._fishSpawnerControllers)
+		{
+			fishSpawnerCtrl.Start();
+			fishSpawnerCtrl._gg = _gg;
+			foreach(Fish fish in fishSpawnerCtrl._fishToSpawn)
+				_gg._totalFish += fish._fishSpawnAmount;
+		}
 	}
 }

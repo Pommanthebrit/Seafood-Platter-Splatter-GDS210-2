@@ -1407,6 +1407,10 @@ Prefab:
       propertyPath: _gg
       value: 
       objectReference: {fileID: 1287715818}
+    - target: {fileID: 1910034098090728, guid: 755c974a6a9530043a549153200b834e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 755c974a6a9530043a549153200b834e, type: 2}
   m_IsPrefabParent: 0
@@ -1937,6 +1941,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1287715819}
   - component: {fileID: 1287715818}
+  - component: {fileID: 1287715821}
   - component: {fileID: 1287715820}
   m_Layer: 0
   m_Name: CTRL_GameGod
@@ -1956,7 +1961,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f20d1ae628a5f4c9a155f9c9c2e304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxAmmo: 30
+  _maxAmmo: 1000
+  _totalFish: 0
   _currentAmmo: 0
   _currentScore: 0
 --- !u!4 &1287715819
@@ -2052,6 +2058,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1287715821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1287715817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09480e670490a0f42bf4783665a3fd2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manualRounds:
+  - {fileID: 11400000, guid: a784e433175e7ac47835f1e8954eb02f, type: 2}
+  - {fileID: 11400000, guid: ba0d99678dc865f41a556d6b931683a6, type: 2}
+  _currentRound: 0
+  _fishLeftToSpawn: 0
 --- !u!1001 &1337628996
 Prefab:
   m_ObjectHideFlags: 0
