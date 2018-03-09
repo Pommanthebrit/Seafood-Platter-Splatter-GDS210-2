@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4087378719774276}
-  - component: {fileID: 114182542498707394}
   m_Layer: 0
   m_Name: FishSpawner
   m_TagString: Untagged
@@ -40,24 +39,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114182542498707394
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1923491694298462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2761b12a068f28458bbf790e5e115d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _fishToSpawn:
-  - _spawnFrequency: 20
-    _fishPrefab: {fileID: 1910034098090728, guid: 755c974a6a9530043a549153200b834e,
-      type: 2}
-  - _spawnFrequency: 15
-    _fishPrefab: {fileID: 1910034098090728, guid: 755c974a6a9530043a549153200b834e,
-      type: 2}
-  - _spawnFrequency: 30
-    _fishPrefab: {fileID: 1910034098090728, guid: 755c974a6a9530043a549153200b834e,
-      type: 2}

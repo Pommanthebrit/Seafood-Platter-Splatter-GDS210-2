@@ -6,5 +6,6 @@ using UnityEngine;
 public class Fish
 {
 	public float _spawnFrequency;
+	public int _fishSpawnAmount;
 	public GameObject _fishPrefab;
 }

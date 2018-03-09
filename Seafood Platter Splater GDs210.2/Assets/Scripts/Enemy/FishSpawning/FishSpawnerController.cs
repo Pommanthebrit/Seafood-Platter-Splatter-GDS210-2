@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FishSpawnerController : MonoBehaviour 
+[System.Serializable]
+public class FishSpawnerController
 {
+	[SerializeField] private SpawnPoint _mySpawnPoint;
 	[SerializeField] private Fish[] _fishToSpawn;
+
 	private List<FishSpawner> _fishSpawners;
 
 	void Start()
@@ -13,7 +16,7 @@ public class FishSpawnerController : MonoBehaviour
 
 		for(int index = 0; index < _fishToSpawn.Length; index++)
 		{
-			FishSpawner fishSpawner = new FishSpawner(_fishToSpawn[index]._spawnFrequency, index, this);
+			FishSpawner fishSpawner = new FishSpawner(_fishToSpawn[index]._spawnFrequency, index, _fishToSpawn[index]._fishSpawnAmount, this);
 			_fishSpawners.Add(fishSpawner);
 		}
 	}
@@ -28,6 +31,6 @@ public class FishSpawnerController : MonoBehaviour
 
 	public void SpawnFish(int fishSpawnID)
 	{
-		Instantiate(_fishToSpawn[fishSpawnID]._fishPrefab, transform.position, transform.rotation);
+		_mySpawnPoint.SpawnObject(_fishToSpawn[fishSpawnID]._fishPrefab);
 	}
 }

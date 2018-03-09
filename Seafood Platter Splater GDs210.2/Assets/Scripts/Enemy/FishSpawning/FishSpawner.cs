@@ -8,22 +8,24 @@ public class FishSpawner
 	private int _fishSpawnID;
 	private float _spawnFrequency;
 	private float _nextSpawn;
+	private int _fishLeft;
 
-	public FishSpawner(float spawnFrequency, int fishSpawnID, FishSpawnerController spawnCtrl)
+	public FishSpawner(float spawnFrequency, int fishSpawnID, int fishSpawnAmount, FishSpawnerController spawnCtrl)
 	{
 		_spawnFrequency = spawnFrequency;
 		_fishSpawnID = fishSpawnID;
+		_fishLeft = fishSpawnAmount;
 		_spawnCtrl = spawnCtrl;
 		_nextSpawn = Time.time + _spawnFrequency;
-		Debug.Log("Test");
 	}
 
 	public void Update()
 	{
-		if(_nextSpawn < Time.time)
+		if(_nextSpawn < Time.time && _fishLeft > 0)
 		{
 			_nextSpawn = Time.time + _spawnFrequency;
 			_spawnCtrl.SpawnFish(_fishSpawnID);
+			_fishLeft--;
 		}
 	}
 }
