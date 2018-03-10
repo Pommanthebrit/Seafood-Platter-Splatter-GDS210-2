@@ -627,7 +627,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1622167250}
-  - {fileID: 1686208994}
+  - {fileID: 934850129}
   m_Father: {fileID: 844930291}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -134}
@@ -1605,7 +1605,7 @@ GameObject:
   - component: {fileID: 901847916}
   - component: {fileID: 901847915}
   m_Layer: 5
-  m_Name: Text
+  m_Name: FishText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1734,6 +1734,90 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: a3ccb5684e416ba47ad49b2cb41311b0, type: 3}
   m_PrefabInternal: {fileID: 779963286}
+--- !u!1 &934850128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 934850129}
+  - component: {fileID: 934850131}
+  - component: {fileID: 934850130}
+  - component: {fileID: 934850132}
+  m_Layer: 5
+  m_Name: Ammo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &934850129
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 934850128}
+  m_LocalRotation: {x: 0, y: 0, z: 0.92050487, w: 0.39073122}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1686208994}
+  m_Father: {fileID: 220409759}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 134}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -19.5, y: -19.7}
+  m_SizeDelta: {x: 109, y: 84.65}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &934850130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 934850128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 935ac8f3a193c424ca5d85baec5cb38a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &934850131
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 934850128}
+--- !u!114 &934850132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 934850128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 0.4, y: -0.4}
+  m_UseGraphicAlpha: 1
 --- !u!4 &940752686 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 84376f2a0948947b5a6dfe814a1100a0, type: 2}
@@ -2291,10 +2375,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f20d1ae628a5f4c9a155f9c9c2e304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxAmmo: 1000
+  _maxAmmo: 100
   _totalFish: 0
   _currentAmmo: 0
   _currentScore: 0
+  _ammoHUD: {fileID: 1686208993}
+  _fishHUD: {fileID: 901847913}
 --- !u!4 &1287715819
 Transform:
   m_ObjectHideFlags: 0
@@ -3509,7 +3595,7 @@ GameObject:
   - component: {fileID: 1686208996}
   - component: {fileID: 1686208995}
   m_Layer: 5
-  m_Name: Text
+  m_Name: AmmoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3521,16 +3607,16 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1686208993}
-  m_LocalRotation: {x: 0, y: 0, z: 0.92050487, w: 0.39073122}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 220409759}
-  m_RootOrder: 1
+  m_Father: {fileID: 934850129}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 134}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.63, y: 20.79}
+  m_AnchoredPosition: {x: 6.271966, y: -61.524292}
   m_SizeDelta: {x: 135.49, y: 51.53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1686208995

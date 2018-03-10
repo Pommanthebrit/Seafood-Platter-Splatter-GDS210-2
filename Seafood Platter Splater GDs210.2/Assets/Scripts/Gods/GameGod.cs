@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameGod : MonoBehaviour 
 {
@@ -8,6 +9,9 @@ public class GameGod : MonoBehaviour
 	[HideInInspector] public int _totalFish;
 	[HideInInspector] public int _currentAmmo;
 	[HideInInspector] public int _currentScore;
+
+	public GameObject _ammoHUD;
+	public GameObject _fishHUD;
 
 	private RoundGod _roundGod;
 	private AudioSource _audioSource;
@@ -26,6 +30,9 @@ public class GameGod : MonoBehaviour
 	private void Update()
 	{
 		Debug.Log("Total Fish GG: " + _totalFish);
+
+		_ammoHUD.GetComponent<Text> ().text = "x" + _currentAmmo.ToString ();
+		_fishHUD.GetComponent<Text> ().text = "x" + _totalFish.ToString ();
 	}
 
 	private void ReplenishAmmo()
