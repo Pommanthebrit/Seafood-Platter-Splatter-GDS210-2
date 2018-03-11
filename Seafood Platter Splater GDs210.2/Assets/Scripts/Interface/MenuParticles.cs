@@ -7,6 +7,7 @@ public class MenuParticles : MonoBehaviour {
 	public ParticleSystem initialBubble;
 
 	void Start () {
+		Time.timeScale = 1;
 		Invoke ("InitialBubbleStop", 0.5f);
 	}
 

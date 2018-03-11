@@ -12,6 +12,7 @@ public class SplashScreen : MonoBehaviour {
 	bool isMoving = false;
 
 	void Start () {
+		Time.timeScale = 1;
 		//Begin looping movement function
 		StartCoroutine ("TextMove");
 

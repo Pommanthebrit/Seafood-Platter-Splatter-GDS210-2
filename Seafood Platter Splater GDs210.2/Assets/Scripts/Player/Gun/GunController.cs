@@ -19,7 +19,7 @@ public class GunController : MonoBehaviour
 
 	private void Update()
 	{
-		if(Input.GetButtonUp("Fire1"))
+		if(Input.GetButtonUp("Fire1") && _gg._isPaused == false)
 		{
 			Shoot();
 		}
