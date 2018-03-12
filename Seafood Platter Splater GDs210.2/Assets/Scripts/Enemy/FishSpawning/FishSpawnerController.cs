@@ -20,9 +20,9 @@ public class FishSpawnerController
 		{
 			FishSpawner fishSpawner = new FishSpawner(_fishToSpawn[index]._spawnFrequency, index, _fishToSpawn[index]._fishSpawnAmount, this);
 			_fishSpawners.Add(fishSpawner);
-			_gg._totalFish += _fishToSpawn[index]._fishSpawnAmount;
+//			_gg._totalFish += _fishToSpawn[index]._fishSpawnAmount;
 
-			Debug.Log("Total Fish: " + _gg._totalFish);
+//			Debug.Log("Total Fish: " + _gg._totalFish);
 		}
 	}
 

@@ -20,6 +20,7 @@ public class RoundGod : MonoBehaviour {
 
 	private void Start()
 	{
+		_roundInProgress = true;
 		_gg = GetComponent<GameGod>();
 
 		Debug.Log("GOD _gg: " + _gg);
@@ -28,21 +29,29 @@ public class RoundGod : MonoBehaviour {
 			fishSpawnerCtrl.Start();
 			fishSpawnerCtrl._gg = _gg;
 			foreach(Fish fish in fishSpawnerCtrl._fishToSpawn)
+			{
 				_gg._totalFish += fish._fishSpawnAmount;
+				Debug.Log("AddingFish:" + fish._fishSpawnAmount);
+				Debug.Log("TotalFish RG: " + _gg._totalFish);
+			}
 		}
 	}
 
 	private void Update()
 	{
-		foreach(FishSpawnerController fishSpawnerCtrl in _manualRounds[_currentRound]._fishSpawnerControllers)
+		if(_roundInProgress)
 		{
-			fishSpawnerCtrl.Update();
+			foreach(FishSpawnerController fishSpawnerCtrl in _manualRounds[_currentRound]._fishSpawnerControllers)
+			{
+				fishSpawnerCtrl.Update();
+			}
 		}
 	}
 
 	public void EndRound()
 	{
 		_currentRound++;
+		_roundInProgress = false;
 		if(_currentRound < _manualRounds.Length)
 		{
 			StartRound();
@@ -51,6 +60,8 @@ public class RoundGod : MonoBehaviour {
 
 	private void StartRound()
 	{
+		_roundInProgress = true;
+
 		foreach(FishSpawnerController fishSpawnerCtrl in _manualRounds[_currentRound]._fishSpawnerControllers)
 		{
 			fishSpawnerCtrl.Start();
