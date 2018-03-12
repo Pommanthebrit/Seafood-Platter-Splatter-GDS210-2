@@ -9,17 +9,13 @@ public class EnemyController : MonoBehaviour
 	[SerializeField] private int _scoreWorth;
 	[SerializeField] private bool _endangered;
 
-	private void Start()
-	{
-	}
-
 	// When a collision happens.
 	private void OnCollisionEnter(Collision other)
 	{
-		// If bullet collision
+		// If bullet collision.
 		if(other.gameObject.tag == "Bullet")
 		{
-			Hit(); // Get hit
+			Hit(); // Get hit.
 		}
 	}
 

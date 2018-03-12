@@ -5,15 +5,36 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class EnemyMovementWaypointSimple : MonoBehaviour 
 {
+	[Header("Loop Options")]
+
+	[Tooltip("Will this fish loop. (Go from point A to point B back to point A then to point B again. " +
+		"Point B is counted as the last waypoint).")]
 	[SerializeField] private bool _loop;
+
+	[Tooltip("How many times will this fish loop. (A trip from point A to B is considered 1 loop.)" +
+		"(If 0 is inputed here the fish will loop indefinitely.)")]
 	[SerializeField] private int _loopAmount;
 
+
+
+	[Header("Movement Settings")]
+
+	[Tooltip("The speed of which this fish will move from waypoint to waypoint.")]
 	[SerializeField] protected float _speed;
+
+	[Header("Waypoint Settings")]
+	[Tooltip("Waypoints are set as transforms. " +
+		"Put empty gameObjects in here connected to your Enemy prefab equal or above in hierarchy.")]
 	[SerializeField] protected Transform[] _waypoints;
+
+	[Tooltip("The distance an object will reach from its target before swithcing to the next waypoint.")]
 	[SerializeField] protected float _switchDistance;
-	protected Transform _targetWaypoint;
+
+	// References.
 	protected Rigidbody _rb;
 
+	// Waypoint Variables.
+	protected Transform _targetWaypoint;
 	private int _targetWaypointIndex;
 	private int _currentLoop;
 
@@ -26,6 +47,7 @@ public class EnemyMovementWaypointSimple : MonoBehaviour
 
 	private void Update()
 	{
+		// When the switchDistance has been reached.
 		if((_targetWaypoint.position - transform.position).magnitude < _switchDistance)
 		{
 			ChangeWaypoint();
@@ -38,12 +60,15 @@ public class EnemyMovementWaypointSimple : MonoBehaviour
 		AddOtherMovement();
 	}
 
+	// Sets/Resets waypoints. Defaulted to selecting the first waypoint as the target waypoint.
 	protected virtual void SetWaypoints()
 	{
 		_targetWaypointIndex = 0;
 		_targetWaypoint = _waypoints[0];
 	}
 
+	// This changes the waypoint to the next one in line. It also checks looping settings and loops if nesscacary.
+	// NOTE: May need to break down further to allow easy changes to how waypoint are selected and changed.
 	private void ChangeWaypoint()
 	{
 		_targetWaypointIndex++;
@@ -59,23 +84,25 @@ public class EnemyMovementWaypointSimple : MonoBehaviour
 		}
 		else
 		{
-			// Take fish score
-			Destroy(this.gameObject);
+			// TO-DO: Take fish score
+			Destroy(this.gameObject); // TEMP.
 		}
 	}
 
+	// Moves to the next waypoint.
 	protected virtual void MoveToNextWaypoint()
 	{
-		Debug.Log (_targetWaypoint.position.ToString ());
 		Vector3 directionToWaypoint = (_targetWaypoint.position - transform.position).normalized;
-		_rb.MovePosition(transform.position+(directionToWaypoint * _speed*Time.fixedDeltaTime));
+		_rb.MovePosition(transform.position+(directionToWaypoint * _speed * Time.fixedDeltaTime));
 	}
 
+	// Skeleton method for other setups (Deletion of this method is probably best).
 	protected virtual void SetupOther()
 	{
 		
 	}
 
+	// Skeleton method for other movement being added (Deletion of this method is probably best).
 	protected virtual void AddOtherMovement()
 	{
 		

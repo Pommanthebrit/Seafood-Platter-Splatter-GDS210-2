@@ -6,24 +6,22 @@ using UnityEngine;
 public class FishSpawnerController
 {
 	[HideInInspector] public GameGod _gg;
+
+	[Header("Spawning Options")]
 	[SerializeField] private SpawnPoint _mySpawnPoint;
+
+	[Header("Fish Types")]
 	public Fish[] _fishToSpawn;
 
-	private Round _round;
 	private List<FishSpawner> _fishSpawners;
 
 	public void Start()
 	{
+		// References.
 		_fishSpawners = new List<FishSpawner>();
 
-		for(int index = 0; index < _fishToSpawn.Length; index++)
-		{
-			FishSpawner fishSpawner = new FishSpawner(_fishToSpawn[index]._spawnFrequency, index, _fishToSpawn[index]._fishSpawnAmount, this);
-			_fishSpawners.Add(fishSpawner);
-//			_gg._totalFish += _fishToSpawn[index]._fishSpawnAmount;
-
-//			Debug.Log("Total Fish: " + _gg._totalFish);
-		}
+		// Actions.
+		InstanstiateFishSpawners();
 	}
 
 	public void Update()
@@ -34,9 +32,19 @@ public class FishSpawnerController
 		}
 	}
 
+	//Creates FishSpawners from Fish data and stores them in a list (_fishSpawners).
+	private void InstanstiateFishSpawners()
+	{
+		for(int index = 0; index < _fishToSpawn.Length; index++)
+		{
+			FishSpawner fishSpawner = new FishSpawner(_fishToSpawn[index]._spawnFrequency, index, _fishToSpawn[index]._fishSpawnAmount, this);
+			_fishSpawners.Add(fishSpawner);
+		}
+	}
+
+	// Spawns a fish prefab at this controllers spawn point.
 	public void SpawnFish(int fishSpawnID)
 	{
-		Debug.Log("CRTL _gg: " + _gg);
 		_mySpawnPoint.SpawnObject(_fishToSpawn[fishSpawnID]._fishPrefab, _gg);
 	}
 }
