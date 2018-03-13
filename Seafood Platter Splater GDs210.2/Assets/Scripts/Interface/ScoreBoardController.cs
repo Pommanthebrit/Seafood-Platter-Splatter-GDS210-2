@@ -9,7 +9,7 @@ public class ScoreBoardController : MonoBehaviour {
 
 	public Text[] highScores; //Array for high score text fields
 	int[] highScoreValues; //Array for high score values
-	int finalScore; //Value for player score after game over
+	int myScore, finalScore; //Values for player score
 	string[] highScoreNames; //Array for high score player Names
 	public GameObject nameInputBox, submitButton, quitToMenuButton; //UI objects that can be enabled or disabled as required
 	public InputField playerName; //Player name input on scoreboard
@@ -17,17 +17,19 @@ public class ScoreBoardController : MonoBehaviour {
 	public AudioClip wowNewHighScore; //assigns sound clip
 
 	void Start () {
+		myScore = PlayerPrefs.GetInt ("myScore"); //Gets players current score from player prefs
+		finalScore = PlayerPrefs.GetInt ("highScoreValues" + 9); //Gets #10 high score
+			if (myScore > finalScore) { //checks if current score > #10 high score
+				NewHighScore();
+			}
 		highScoreValues = new int[highScores.Length]; //Sets the number of array entries in highScoreValues to the same amount as the array length of highScores
 		highScoreNames = new string[highScores.Length]; //Sets the number of array entries in highScoreNames to the same amount as the array length of highScores
 			for (int x = 0; x < highScores.Length; x++) { //runs this loop for each score in the highScores array
-				//if(PlayerPrefs.HasKey("highScoreValues" + x)) // checks if highscore key exists
-					highScoreValues[x] = PlayerPrefs.GetInt ("highScoreValues" + x); //each time the loop runs, gets one of the highScoreValues from PlayerPrefs
-				//else
-				//	PlayerPrefs.SetInt("highScoreValues" + x, 0); // if no highscore exists create one
-				if(PlayerPrefs.HasKey("highScoreNames" + x)) // checks if highscore key exists
-					highScoreNames[x] = PlayerPrefs.GetString ("highScoreNames" + x); //each time the loop runs, gets one of the highScoreNames from PlayerPrefs
-				else
-					PlayerPrefs.SetString("highScoreNames" + x, "N/A"); // if no highscore exists create one
+				highScoreValues[x] = PlayerPrefs.GetInt ("highScoreValues" + x); //each time the loop runs, gets one of the highScoreValues from PlayerPrefs
+					if(PlayerPrefs.HasKey("highScoreNames" + x)) // checks if highscore key exists
+						highScoreNames[x] = PlayerPrefs.GetString ("highScoreNames" + x); //each time the loop runs, gets one of the highScoreNames from PlayerPrefs
+					else
+						PlayerPrefs.SetString("highScoreNames" + x, "N/A"); // if no highscore exists create one
 			}
 		DrawScores ();
 	}
@@ -62,14 +64,9 @@ public class ScoreBoardController : MonoBehaviour {
 	}
 
 	public void SubmitScore(){ //function for entering name on scoreboard. This function will be called by clicking the "Submit" button on the scoreboard (after the player has entered their name)
-		//CheckForHighScore (myScore, playerName.text); //calls function and passes variables
+		CheckForHighScore (myScore, playerName.text); //calls function and passes variables
 		nameInputBox.SetActive (false); //Disables name input box
 		submitButton.SetActive (false); //Disables submit button
-
-		finalScore = PlayerPrefs.GetInt ("highScoreValues" + 9); //Gets #10 high score
-//		if (myScore > finalScore) { //checks if current score > #10 high score
-//			NewHighScore();	//calls function with time delay
-//		}
 	}
 
 	public void NewHighScore() { //function for when player gets a new high score
