@@ -31,9 +31,10 @@ public class GameGod : MonoBehaviour
 		// Ensures that player 1 is in the list [0] slot and player 2 is in the list [1] slot.
 		// NOTE: Use _playerControllers[0]._ammo for player 1 ammo and
 		// NOTE: Use _playerControllers[1]._ammo for player 2 ammo etc.
-		while(_playerControllers.Count < 2)
+		GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+		while(_playerControllers.Count < players.Length)
 		{
-			foreach(GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+			foreach(GameObject player in players)
 			{
 				PlayerController playerController = player.GetComponent<PlayerController>();
 
@@ -48,10 +49,6 @@ public class GameGod : MonoBehaviour
 				}
 			}
 		}
-
-		print(_playerControllers.Count);
-		Debug.Log(_playerControllers[0]._playerID);
-		Debug.Log(_playerControllers[1]._playerID);
 
 		//Ensure HUDs show correctly during initialisation
 		Time.timeScale = 1;
