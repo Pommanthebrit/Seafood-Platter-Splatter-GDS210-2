@@ -39,7 +39,7 @@ public class GameGod : MonoBehaviour
 
 	private void Update()
 	{
-		Debug.Log("Total Fish GG: " + _totalFish);
+		//Debug.Log("Total Fish GG: " + _totalFish);
 
 		_ammoHUD.GetComponent<Text> ().text = "x" + _currentAmmo.ToString ();
 		_fishHUD.GetComponent<Text> ().text = "x" + _totalFish.ToString ();
