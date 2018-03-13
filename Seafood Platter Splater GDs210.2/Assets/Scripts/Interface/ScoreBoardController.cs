@@ -11,16 +11,21 @@ public class ScoreBoardController : MonoBehaviour {
 	int[] highScoreValues; //Array for high score values
 	int myScore, finalScore; //Values for player score
 	string[] highScoreNames; //Array for high score player Names
-	public GameObject nameInputBox, submitButton, quitToMenuButton; //UI objects that can be enabled or disabled as required
+	public GameObject nameInputButton, submitButton, quitToMainMenuButton; //UI objects that can be enabled or disabled as required
 	public InputField playerName; //Player name input on scoreboard
 	AudioSource myAudioSource;
 	public AudioClip wowNewHighScore; //assigns sound clip
 
 	void Start () {
-		myScore = PlayerPrefs.GetInt ("myScore"); //Gets players current score from player prefs
+		//PlayerPrefs.SetInt ("Score", 20);
+		myScore = PlayerPrefs.GetInt ("Score"); //Gets players current score from player prefs
+		print ("Score " + myScore);
 		finalScore = PlayerPrefs.GetInt ("highScoreValues" + 9); //Gets #10 high score
 			if (myScore > finalScore) { //checks if current score > #10 high score
-				NewHighScore();
+				NewHighScore();	//calls function with time delay
+			} else {
+				nameInputButton.SetActive (false);
+				submitButton.SetActive (false);
 			}
 		highScoreValues = new int[highScores.Length]; //Sets the number of array entries in highScoreValues to the same amount as the array length of highScores
 		highScoreNames = new string[highScores.Length]; //Sets the number of array entries in highScoreNames to the same amount as the array length of highScores
@@ -65,12 +70,12 @@ public class ScoreBoardController : MonoBehaviour {
 
 	public void SubmitScore(){ //function for entering name on scoreboard. This function will be called by clicking the "Submit" button on the scoreboard (after the player has entered their name)
 		CheckForHighScore (myScore, playerName.text); //calls function and passes variables
-		nameInputBox.SetActive (false); //Disables name input box
+		nameInputButton.SetActive (false); //Disables name input box
 		submitButton.SetActive (false); //Disables submit button
 	}
 
 	public void NewHighScore() { //function for when player gets a new high score
-		//Could add sounds UI pop-ups here
+		//We could add highscore UI pop-ups here
 		myAudioSource = GetComponent<AudioSource> (); //Gets audio source
 		myAudioSource.PlayOneShot (wowNewHighScore); //Plays audio file
 	}
