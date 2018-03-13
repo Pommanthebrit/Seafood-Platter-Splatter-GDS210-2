@@ -14,18 +14,16 @@ public class ScoreBoardController : MonoBehaviour {
 	void Start () { // Use this for initialization
 		highScoreValues = new int[highScores.Length]; //Sets the number of array entries in highScoreValues to the same amount as the array length of highScores
 		highScoreNames = new string[highScores.Length]; //Sets the number of array entries in highScoreNames to the same amount as the array length of highScores
-		for (int x = 0; x < highScores.Length; x++) { //runs this loop for each score in the highScores array
-			// EDIT
-			if(PlayerPrefs.HasKey("highScoreValues" + x)) // checks if highscore key exists
-				highScoreValues[x] = PlayerPrefs.GetInt ("highScoreValues" + x); //each time the loop runs, gets one of the highScoreValues from PlayerPrefs
-			else
-				PlayerPrefs.SetInt("highScoreValues" + x, 0); // if no highscore exists create one
-
-			if(PlayerPrefs.HasKey("highScoreNames" + x)) // checks if highscore key exists
-				highScoreNames[x] = PlayerPrefs.GetString ("highScoreNames" + x); //each time the loop runs, gets one of the highScoreNames from PlayerPrefs
-			else
-				PlayerPrefs.SetString("highScoreNames" + x, "N/A"); // if no highscore exists create one
-		}
+			for (int x = 0; x < highScores.Length; x++) { //runs this loop for each score in the highScores array
+				//if(PlayerPrefs.HasKey("highScoreValues" + x)) // checks if highscore key exists
+					highScoreValues[x] = PlayerPrefs.GetInt ("highScoreValues" + x); //each time the loop runs, gets one of the highScoreValues from PlayerPrefs
+				//else
+				//	PlayerPrefs.SetInt("highScoreValues" + x, 0); // if no highscore exists create one
+				if(PlayerPrefs.HasKey("highScoreNames" + x)) // checks if highscore key exists
+					highScoreNames[x] = PlayerPrefs.GetString ("highScoreNames" + x); //each time the loop runs, gets one of the highScoreNames from PlayerPrefs
+				else
+					PlayerPrefs.SetString("highScoreNames" + x, "N/A"); // if no highscore exists create one
+			}
 		DrawScores (); //calls function DrawScores
 	}
 
