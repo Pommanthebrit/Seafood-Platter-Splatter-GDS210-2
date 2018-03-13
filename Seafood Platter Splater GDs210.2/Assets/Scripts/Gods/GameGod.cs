@@ -14,18 +14,45 @@ public class GameGod : MonoBehaviour
 	public GameObject _ammoHUD;
 	public GameObject _fishHUD;
 	public Transform _pauseMenu, _soloHUD;
-	[HideInInspector]public bool _isPaused = false;
+	[HideInInspector] public bool _isPaused = false;
 	public ParticleSystem _pauseBubble;
 
 	private RoundGod _roundGod;
 	private AudioSource _audioSource;
 
-	private void Awake()
-	{
-	}
+	private List<PlayerController> _playerControllers;
+	private PlayerController[] _playerControllersArray;
 
 	private void Start()
 	{
+		_playerControllers = new List<PlayerController>();
+
+		// Automatically retrieves active players.
+		// Ensures that player 1 is in the list [0] slot and player 2 is in the list [1] slot.
+		// NOTE: Use _playerControllers[0]._ammo for player 1 ammo and
+		// NOTE: Use _playerControllers[1]._ammo for player 2 ammo etc.
+		while(_playerControllers.Count < 2)
+		{
+			foreach(GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+			{
+				PlayerController playerController = player.GetComponent<PlayerController>();
+
+				if(playerController._playerID == _playerControllers.Count + 1)
+				{
+					_playerControllers.Add(playerController);
+				}
+
+				if(_playerControllers.Count > 1)
+				{
+					break;
+				}
+			}
+		}
+
+		print(_playerControllers.Count);
+		Debug.Log(_playerControllers[0]._playerID);
+		Debug.Log(_playerControllers[1]._playerID);
+
 		//Ensure HUDs show correctly during initialisation
 		Time.timeScale = 1;
 		_pauseMenu.gameObject.SetActive (false);
