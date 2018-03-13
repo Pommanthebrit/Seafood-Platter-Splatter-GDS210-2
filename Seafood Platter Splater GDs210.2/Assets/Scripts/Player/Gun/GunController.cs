@@ -19,9 +19,15 @@ public class GunController : MonoBehaviour
 
 	private void Update()
 	{
-		if(Input.GetButtonUp("Fire1") && _gg._isPaused == false)
-		{
-			Shoot();
+		if (transform.parent.GetComponent<GunLookAtMouse> ().isPlayer2) {
+			if (Input.GetButtonUp ("Fire2") && _gg._isPaused == false) {
+				Shoot ();
+			}
+		} else {
+
+			if (Input.GetButtonUp ("Fire1") && _gg._isPaused == false) {
+				Shoot ();
+			}
 		}
 	}
 
@@ -30,7 +36,8 @@ public class GunController : MonoBehaviour
 		if(_gg._currentAmmo > 0)
 		{
 			_gg._currentAmmo--;
-			Instantiate(_bulletPrefab, _spawnTransform.position, _spawnTransform.rotation);
+			GameObject g =Instantiate(_bulletPrefab, _spawnTransform.position, _spawnTransform.rotation) as GameObject;
+			g.GetComponent<SimpleBulletController> ().controllerPos = transform.parent.GetComponent<GunLookAtMouse> ().ControllerPos;
 			_gg.PlayGlobal2DSound(_shootAudio);
 		}
 		else
