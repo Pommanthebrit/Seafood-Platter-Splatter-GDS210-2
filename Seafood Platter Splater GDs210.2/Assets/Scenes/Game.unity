@@ -2190,7 +2190,7 @@ GameObject:
   - component: {fileID: 902963654}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2208,7 +2208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rotateSpeed: 0
   _target: {fileID: 1581477150}
-  isPlayer2: 0
+  _playerID: 0
   ControllerPos: {x: 0, y: 0, z: 0}
 --- !u!4 &902963653
 Transform:
@@ -2239,7 +2239,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerID: 1
-  _currentAmmo: 0
+  _gg: {fileID: 0}
+  _currentAmmo: 10
   _currentScore: 0
 --- !u!1 &934850128
 GameObject:

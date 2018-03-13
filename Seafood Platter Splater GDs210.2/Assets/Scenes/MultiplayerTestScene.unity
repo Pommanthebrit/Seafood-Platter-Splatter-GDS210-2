@@ -712,7 +712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rotateSpeed: 0
   _target: {fileID: 545069064}
-  isPlayer2: 1
+  _playerID: 0
   ControllerPos: {x: 0, y: 0, z: 0}
 --- !u!4 &111281842
 Transform:
@@ -743,6 +743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerID: 2
+  _gg: {fileID: 0}
   _currentAmmo: 0
   _currentScore: 0
 --- !u!1 &124679124
@@ -2103,7 +2104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rotateSpeed: 0
   _target: {fileID: 1581477150}
-  isPlayer2: 0
+  _playerID: 0
   ControllerPos: {x: 0, y: 0, z: 0}
 --- !u!4 &902963653
 Transform:
@@ -2134,7 +2135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerID: 1
-  _currentAmmo: 0
+  _gg: {fileID: 0}
+  _currentAmmo: 10
   _currentScore: 0
 --- !u!1001 &962221942
 Prefab:

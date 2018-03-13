@@ -27,7 +27,7 @@ public class GameGod : MonoBehaviour
 	{
 		_playerControllers = new List<PlayerController>();
 
-		// Automatically retrieves active players.
+		// Automatically retrieves active players. Will need changing if instantiating players.
 		// Ensures that player 1 is in the list [0] slot and player 2 is in the list [1] slot.
 		// NOTE: Use _playerControllers[0]._ammo for player 1 ammo and
 		// NOTE: Use _playerControllers[1]._ammo for player 2 ammo etc.
@@ -41,6 +41,7 @@ public class GameGod : MonoBehaviour
 				if(playerController._playerID == _playerControllers.Count + 1)
 				{
 					_playerControllers.Add(playerController);
+					playerController._gg = this;
 				}
 
 				if(_playerControllers.Count > 1)
