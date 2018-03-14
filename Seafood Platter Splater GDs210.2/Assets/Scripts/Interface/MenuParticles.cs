@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class MenuParticles : MonoBehaviour {
 
+	AudioSource myAudioSource;
+	public AudioClip bubbleBlow;
 	public ParticleSystem initialBubble;
 
 	void Start () {
+		myAudioSource = GetComponent<AudioSource> ();
+		myAudioSource.PlayOneShot (bubbleBlow);
+
 		Time.timeScale = 1;
 		Invoke ("InitialBubbleStop", 0.5f);
 	}

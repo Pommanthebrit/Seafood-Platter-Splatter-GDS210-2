@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; //allows access to UI elemenmts
+using UnityEngine.UI; //allows access to UI elements
 
 //script written by Aston Olsen
 

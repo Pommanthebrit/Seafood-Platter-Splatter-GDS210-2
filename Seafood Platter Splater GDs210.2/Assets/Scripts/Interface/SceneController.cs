@@ -6,12 +6,11 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour {
 
 	AudioSource myAudioSource;
-	public AudioClip bubblePop, bubbleBlow;
+	public AudioClip bubblePop;
 	public GameObject particlesToSpawn;
 
 	void Start () {
 		myAudioSource = GetComponent<AudioSource> ();
-		myAudioSource.PlayOneShot (bubbleBlow);
 	}
 
 	//Open new scene button with delay
