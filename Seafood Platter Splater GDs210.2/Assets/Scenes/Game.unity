@@ -2383,8 +2383,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerID: 1
-  _gg: {fileID: 0}
   _currentAmmo: 1000
+  _gg: {fileID: 0}
   _currentScore: 0
 --- !u!1 &934850128
 GameObject:
