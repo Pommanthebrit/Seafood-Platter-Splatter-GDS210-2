@@ -120,6 +120,7 @@ public class GameGod : MonoBehaviour
 	public void AddScore(int score, int playerID)
 	{
 		_playerControllers[playerID - 1]._currentScore += score;
+		print("Player " + playerID + ": " + _playerControllers[playerID - 1]._currentScore);
 		_currentScore += score;
 	}
 }

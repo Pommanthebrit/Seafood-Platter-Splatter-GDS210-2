@@ -45,7 +45,5 @@ public class GunLookAtMouse : MonoBehaviour
 		transform.LookAt(mouseRay.origin + mouseRay.direction * backingDis);
 
 		Crosshair.transform.position =  ControllerPos;
-
-		Debug.Log("Origin: " + mouseRay.origin);
 	}
 }
