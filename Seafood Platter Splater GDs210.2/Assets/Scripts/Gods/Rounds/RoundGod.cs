@@ -67,9 +67,13 @@ public class RoundGod : MonoBehaviour {
 
 		// Temp. Will need to be replaced with a round end event (eg. Display stat screen, sfx, etc.)
 		_currentRound++;
-		if(_currentRound < _manualRounds.Length)
+		if (_currentRound < _manualRounds.Length) 
 		{
-			StartRound();
+			StartRound ();
+		} 
+		else
+		{
+			// Victory Screen.
 		}
 	}
 
