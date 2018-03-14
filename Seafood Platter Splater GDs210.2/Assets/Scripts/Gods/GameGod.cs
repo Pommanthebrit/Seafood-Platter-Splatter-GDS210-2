@@ -13,6 +13,8 @@ public class GameGod : MonoBehaviour
 	[HideInInspector] public int _currentScore;
 	[HideInInspector] public int _fishEscaped;
 
+	[HideInInspector] public int _maxFish;
+
 	//UI Elements
 	public GameObject _ammoHUD;
 	public GameObject _fishHUD;
@@ -132,19 +134,21 @@ public class GameGod : MonoBehaviour
 	}
 
 
-	private void LoseGame()
+	public void LoseGame()
 	{
-		
+		Debug.Log("Game Lost");
+		GameOver();
 	}
 
-	private void WinGame()
+	public void WinGame()
 	{
-		
+		Debug.Log("Game Won");
+		GameOver();
 	}
 		
 	public void GameOver()
 	{
-		PlayerPrefs.SetInt ("Score", _currentScore); //stores score in player prefs
+		PlayerPrefs.SetInt("Score", _currentScore); //stores score in player prefs
 		StartCoroutine("Load");
 	}
 

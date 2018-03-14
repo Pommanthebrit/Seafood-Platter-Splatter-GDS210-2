@@ -35,7 +35,10 @@ public class RoundGod : MonoBehaviour {
 	private void AddFishAmountFromSpawnerCtrl(FishSpawnerController spawnerCtrl)
 	{
 		foreach(Fish fish in spawnerCtrl._fishToSpawn)
+		{
 			_gg._totalFish += fish._fishSpawnAmount;
+			_gg._maxFish += fish._fishSpawnAmount;
+		}
 	}
 
 
@@ -65,6 +68,11 @@ public class RoundGod : MonoBehaviour {
 	{
 		_roundInProgress = false;
 
+		if(_gg._fishEscaped > _gg._maxFish/2)
+		{
+			_gg.LoseGame();
+		}
+
 		if(_gg._fishEscaped == 0)
 		{
 			_gg.AddPerfectRoundBonus(_manualRounds[_currentRound]._perfectRoundBonus, _manualRounds[_currentRound]._perfectRoundAmmoBonus);
@@ -78,7 +86,7 @@ public class RoundGod : MonoBehaviour {
 		} 
 		else
 		{
-			// Victory Screen.
+			_gg.WinGame();
 		}
 	}
 
