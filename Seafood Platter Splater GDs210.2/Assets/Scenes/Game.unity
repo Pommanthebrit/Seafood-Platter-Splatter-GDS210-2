@@ -1839,7 +1839,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4392541430055486, guid: 126d23cf0a534f143aa71da32ded88dc, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 198657792662450320, guid: 126d23cf0a534f143aa71da32ded88dc,
         type: 2}
@@ -2134,7 +2134,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4940950183586892, guid: 755c974a6a9530043a549153200b834e, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114907915595274352, guid: 755c974a6a9530043a549153200b834e,
         type: 2}
@@ -2409,7 +2409,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &901847913
 GameObject:
@@ -2565,6 +2565,8 @@ MonoBehaviour:
   _currentAmmo: 1000
   _gg: {fileID: 0}
   _currentScore: 0
+  _clipSize: 2
+  _reloadTime: 1
 --- !u!1 &934850128
 GameObject:
   m_ObjectHideFlags: 0
@@ -3410,6 +3412,7 @@ MonoBehaviour:
   _totalFish: 0
   _currentAmmo: 0
   _currentScore: 0
+  _fishEscaped: 0
   _ammoHUD: {fileID: 1686208993}
   _fishHUD: {fileID: 901847913}
   _pauseMenu: {fileID: 609570663}
@@ -4739,7 +4742,7 @@ Transform:
   - {fileID: 286391816}
   - {fileID: 1109611608}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1786303330
 Prefab:

@@ -1,41 +1,51 @@
 fileFormatVersion: 2
-guid: d9860dd51b4c4df439d9eb84cef2e858
-timeCreated: 1520323325
+guid: 7923eef3c284a9b40a7b23428e05c861
+timeCreated: 1521019425
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: BodyJoint01
-    100002: joint10
-    100004: joint3
-    100006: joint4
-    100008: joint5
-    100010: joint6
-    100012: joint7
-    100014: joint8
-    100016: joint9
-    100018: //RootNode
-    100020: pCylinder3
-    100022: RootJoint
-    400000: BodyJoint01
-    400002: joint10
-    400004: joint3
-    400006: joint4
-    400008: joint5
-    400010: joint6
-    400012: joint7
-    400014: joint8
-    400016: joint9
-    400018: //RootNode
-    400020: pCylinder3
-    400022: RootJoint
-    2100000: Body
-    2100002: Bone
+    100000: Body
+    100002: imagePlane1
+    100004: imagePlane2
+    100006: //RootNode
+    100008: pCylinder1
+    100010: pCylinder2
+    100012: pCylinder3
+    100014: Rear
+    100016: Spine
+    100018: Tail1
+    100020: Tail2
+    100022: Tail_Fin1
+    100024: Tail_Fin1 1
+    100026: transform1
+    100028: transform2
+    400000: Body
+    400002: imagePlane1
+    400004: imagePlane2
+    400006: //RootNode
+    400008: pCylinder1
+    400010: pCylinder2
+    400012: pCylinder3
+    400014: Rear
+    400016: Spine
+    400018: Tail1
+    400020: Tail2
+    400022: Tail_Fin1
+    400024: Tail_Fin1 1
+    400026: transform1
+    400028: transform2
+    2100000: lambert8
     4300000: pCylinder3
     7400000: Take 001
     9500000: //RootNode
     13700000: pCylinder3
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert8
+    second: {fileID: 2100000, guid: 0e648564dfba7714aa0c55fcbfac53e8, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -84,7 +94,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
