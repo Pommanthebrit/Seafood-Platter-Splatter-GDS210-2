@@ -65,6 +65,11 @@ public class RoundGod : MonoBehaviour {
 	{
 		_roundInProgress = false;
 
+		if(_gg._fishEscaped == 0)
+		{
+			_gg.AddPerfectRoundBonus(_manualRounds[_currentRound]._perfectRoundBonus, _manualRounds[_currentRound]._perfectRoundAmmoBonus);
+		}
+
 		// Temp. Will need to be replaced with a round end event (eg. Display stat screen, sfx, etc.)
 		_currentRound++;
 		if (_currentRound < _manualRounds.Length) 

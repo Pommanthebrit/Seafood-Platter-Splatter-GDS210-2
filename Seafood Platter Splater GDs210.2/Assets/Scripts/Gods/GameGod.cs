@@ -11,6 +11,7 @@ public class GameGod : MonoBehaviour
 	[HideInInspector] public int _totalFish;
 	[HideInInspector] public int _currentAmmo;
 	[HideInInspector] public int _currentScore;
+	[HideInInspector] public int _fishEscaped;
 
 	//UI Elements
 	public GameObject _ammoHUD;
@@ -125,6 +126,22 @@ public class GameGod : MonoBehaviour
 		_currentScore += score;
 	}
 
+	public void AddPerfectRoundBonus(int scoreBonus, int ammoBonus)
+	{
+
+	}
+
+
+	private void LoseGame()
+	{
+		
+	}
+
+	private void WinGame()
+	{
+		
+	}
+		
 	public void GameOver()
 	{
 		PlayerPrefs.SetInt ("Score", _currentScore); //stores score in player prefs

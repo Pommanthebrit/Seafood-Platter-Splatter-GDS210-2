@@ -824,6 +824,8 @@ MonoBehaviour:
   _currentAmmo: 20
   _gg: {fileID: 0}
   _currentScore: 0
+  _clipSize: 5
+  _reloadTime: 3
 --- !u!198 &126671888 stripped
 ParticleSystem:
   m_PrefabParentObject: {fileID: 198657792662450320, guid: 126d23cf0a534f143aa71da32ded88dc,
@@ -2451,6 +2453,8 @@ MonoBehaviour:
   _currentAmmo: 20
   _gg: {fileID: 0}
   _currentScore: 0
+  _clipSize: 5
+  _reloadTime: 3
 --- !u!1001 &962221942
 Prefab:
   m_ObjectHideFlags: 0
@@ -3300,6 +3304,7 @@ MonoBehaviour:
   _totalFish: 0
   _currentAmmo: 0
   _currentScore: 0
+  _fishEscaped: 0
   _ammoHUD: {fileID: 51664173}
   _fishHUD: {fileID: 1272914988}
   _pauseMenu: {fileID: 1856534048}
