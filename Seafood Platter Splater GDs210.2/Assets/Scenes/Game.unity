@@ -4283,6 +4283,7 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 1797415489871878, guid: 962b099a887633a4ebb576aa7285e623,
     type: 2}
   _spawnTransform: {fileID: 1040299317}
+  gunBubbles: {fileID: 1197557376159828, guid: 1868e79102f755a40a76906e8705d7eb, type: 2}
   _shootAudio: {fileID: 8300000, guid: 1da8b9ba9623d62439612ae00eff3c8d, type: 3}
   _noAmmoAudio: {fileID: 8300000, guid: 419ec6157ab6bd24b860fc509507a6eb, type: 3}
 --- !u!23 &1895570016
