@@ -8,11 +8,17 @@ public class SplashScreen : MonoBehaviour {
 	public Transform upPos, downPos;
 	public ParticleSystem idleBubble, idleBubble2, fastBubble;
 
+	AudioSource myAudioSource;
+	public AudioClip bubbleBlow;
+	bool audioPlayed = false;
+
 	public float mySpeed = 0, waitTime = 0;
 	bool isMoving = false;
 
 	void Start () {
 		Time.timeScale = 1;
+		myAudioSource = GetComponent<AudioSource> ();
+
 		//Begin looping movement function
 		StartCoroutine ("TextMove");
 
@@ -40,12 +46,17 @@ public class SplashScreen : MonoBehaviour {
 			//Play fast bubble effect
 			ParticleSystem.EmissionModule emit = fastBubble.emission;
 			emit.enabled = true;
-			Invoke ("OpenScene", 2f);
+
+			StartCoroutine ("Load");
 		}
 	}
 
-	//Open next scene in build index order
-	void OpenScene() {
+	IEnumerator Load () {
+		if (audioPlayed == false) {
+			myAudioSource.PlayOneShot (bubbleBlow);
+			audioPlayed = true;
+		}
+		yield return new WaitForSeconds (2f);
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
 	}
 

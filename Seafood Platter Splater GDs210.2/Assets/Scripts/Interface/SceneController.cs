@@ -4,14 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour {
+
+	AudioSource myAudioSource;
+	public AudioClip bubblePop, bubbleBlow;
 	public GameObject particlesToSpawn;
-	//Open scene button with delay
+
+	void Start () {
+		myAudioSource = GetComponent<AudioSource> ();
+		myAudioSource.PlayOneShot (bubbleBlow);
+	}
+
+	//Open new scene button with delay
 	public void OpenSceneDelayed(string sceneName) {
 		StartCoroutine("Load", sceneName);
 	}
 
 	IEnumerator Load(string sceneName) { //coroutine for loading a scene
-		yield return new WaitForSeconds (0.3f); //waits for 1 second
+		yield return new WaitForSeconds (0.3f); //wait time
 		SceneManager.LoadScene (sceneName); //Loads the assigned scene when this function is run
 	}
 
@@ -21,13 +30,15 @@ public class SceneController : MonoBehaviour {
 		Invoke ("Quit", 0.3f); //calls function with specified delay
 	}
 
-	public void Quit() { 
+	void Quit() { 
 		Application.Quit();
 	}
 
+	//Spawns particle effect when button is pressed
 	public void SpawnParticleEffect(RectTransform rT){
 		Vector3 worldPos = Camera.main.ScreenToWorldPoint (new Vector3(rT.position.x,rT.position.y, 20));
 
 		Instantiate (particlesToSpawn,worldPos, Quaternion.identity);
+		myAudioSource.PlayOneShot (bubblePop);
 	}
 }
