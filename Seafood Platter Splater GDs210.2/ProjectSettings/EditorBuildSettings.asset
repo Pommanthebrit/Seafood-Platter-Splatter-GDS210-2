@@ -17,3 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: b63b98347ea1af8439427d292742b48d
+  - enabled: 1
+    path: Assets/Scenes/Scoreboard.unity
+    guid: bb4d3c19ce3b1064da3697262294e62e
+  - enabled: 1
+    path: Assets/Scenes/MultiplayerTestScene.unity
+    guid: 97157e84f2c56044793d67ba175b5d43

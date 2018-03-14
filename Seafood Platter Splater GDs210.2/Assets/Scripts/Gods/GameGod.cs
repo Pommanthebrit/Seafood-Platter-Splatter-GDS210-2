@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
 public class GameGod : MonoBehaviour 
@@ -123,4 +124,16 @@ public class GameGod : MonoBehaviour
 		print("Player " + playerID + ": " + _playerControllers[playerID - 1]._currentScore);
 		_currentScore += score;
 	}
+
+	public void GameOver()
+	{
+		PlayerPrefs.SetInt ("Score", _currentScore); //stores score in player prefs
+		StartCoroutine("Load");
+	}
+
+	IEnumerator Load() { //coroutine for loading a scene
+		yield return new WaitForSeconds (0.5f); //wait time
+		SceneManager.LoadScene ("Scoreboard"); //Loads the scene
+	}
+
 }

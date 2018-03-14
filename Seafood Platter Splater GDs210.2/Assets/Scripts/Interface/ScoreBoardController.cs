@@ -11,7 +11,7 @@ public class ScoreBoardController : MonoBehaviour {
 	int[] highScoreValues; //Array for high score values
 	int myScore, finalScore; //Values for player score
 	string[] highScoreNames; //Array for high score player Names
-	public GameObject nameInputButton, submitButton, quitToMainMenuButton; //UI objects that can be enabled or disabled as required
+	public GameObject nameInputButton, quitToMainMenuButton; //UI objects that can be enabled or disabled as required
 	public InputField playerName; //Player name input on scoreboard
 	AudioSource myAudioSource;
 	public AudioClip wowNewHighScore; //assigns sound clip
@@ -24,7 +24,6 @@ public class ScoreBoardController : MonoBehaviour {
 				NewHighScore();	//calls function with time delay
 			} else {
 				nameInputButton.SetActive (false); //Disables name input box
-				submitButton.SetActive (false); //Disables submit button
 			}
 		highScoreValues = new int[highScores.Length]; //Sets the number of array entries in highScoreValues to the same amount as the array length of highScores
 		highScoreNames = new string[highScores.Length]; //Sets the number of array entries in highScoreNames to the same amount as the array length of highScores
@@ -70,7 +69,6 @@ public class ScoreBoardController : MonoBehaviour {
 	public void SubmitScore(){ //function for entering name on scoreboard. This function will be called by clicking the "Submit" button on the scoreboard (after the player has entered their name)
 		UpdateHighScore (myScore, playerName.text); //calls function and passes variables
 		nameInputButton.SetActive (false); //Disables name input box
-		submitButton.SetActive (false); //Disables submit button
 	}
 
 	public void NewHighScore() { //function for when player gets a new high score
