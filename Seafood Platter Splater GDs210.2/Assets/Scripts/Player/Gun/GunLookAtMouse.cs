@@ -6,7 +6,7 @@ public class GunLookAtMouse : MonoBehaviour
 {
 	[SerializeField] private float _rotateSpeed;
 	[SerializeField] private Transform _target;
-
+	[SerializeField] private GameObject Crosshair;
 
 	public int _playerID;
 	public Vector3 ControllerPos = new Vector3(0,0,0);
@@ -18,11 +18,11 @@ public class GunLookAtMouse : MonoBehaviour
 
 	void Update()
 	{
-//		Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1.0f);
-//
-//		Vector3 direction = (transform.position - mousePos).normalized;
-//		Quaternion rotation = Quaternion.LookRotation(direction);
-//		transform.rotation = rotation;
+		//		Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1.0f);
+		//
+		//		Vector3 direction = (transform.position - mousePos).normalized;
+		//		Quaternion rotation = Quaternion.LookRotation(direction);
+		//		transform.rotation = rotation;
 		if(_playerID == 1)
 		{
 			if (Input.GetAxisRaw ("Horizontal") != 0 || Input.GetAxisRaw ("Vertical") != 0) 
@@ -43,6 +43,8 @@ public class GunLookAtMouse : MonoBehaviour
 		Ray mouseRay = Camera.main.ScreenPointToRay(ControllerPos);
 		float backingDis = (_target.position - Camera.main.transform.position).magnitude * 0.5f;
 		transform.LookAt(mouseRay.origin + mouseRay.direction * backingDis);
+
+		Crosshair.transform.position =  ControllerPos;
 
 		Debug.Log("Origin: " + mouseRay.origin);
 	}
