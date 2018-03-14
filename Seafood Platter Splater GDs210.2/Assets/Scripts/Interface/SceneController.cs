@@ -13,6 +13,10 @@ public class SceneController : MonoBehaviour {
 		myAudioSource = GetComponent<AudioSource> ();
 	}
 
+	public void OpenScene (string sceneName) {
+		SceneManager.LoadScene (sceneName);
+	}
+
 	//Open new scene button with delay
 	public void OpenSceneDelayed(string sceneName) {
 		StartCoroutine("Load", sceneName);
