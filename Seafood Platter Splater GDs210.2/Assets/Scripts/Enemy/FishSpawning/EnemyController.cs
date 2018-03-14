@@ -15,24 +15,24 @@ public class EnemyController : MonoBehaviour
 		// If bullet collision.
 		if(other.gameObject.tag == "Bullet")
 		{
-			Hit(); // Get hit.
+			Hit(other.gameObject.GetComponent<SimpleBulletController>()._bulletPlayerID); // Get hit.
 		}
 	}
 
 	// Damages Enemy.
-	private void Hit()
+	private void Hit(int bulletPlayerID)
 	{
 		_health--;
 		if(_health < 1)
 		{
-			Die();
+			Die(bulletPlayerID);
 		}
 	}
 
 	// Destroys Enemy and Adds score.
-	private void Die()
+	private void Die(int bulletPlayerID)
 	{
-		Destroy(this.gameObject);
-		_gg.ConfirmFishDeath(_scoreWorth);
+		Destroy(transform.parent.gameObject);
+		_gg.ConfirmFishDeath(_scoreWorth, bulletPlayerID);
 	}
 }

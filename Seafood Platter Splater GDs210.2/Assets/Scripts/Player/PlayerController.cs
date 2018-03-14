@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour 
 {
 	public int _playerID;
-	[HideInInspector] public GameGod _gg; // Set up on GameGod.
 	public int _currentAmmo; // TEMP(Change to hide in inspector. Set value elsewhere).
+	[HideInInspector] public GameGod _gg; // Set up on GameGod.
 	[HideInInspector] public int _currentScore;
 
 	private GunController _myGunController;
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 		{
 			if (Input.GetButtonUp ("Fire1") && _gg._isPaused == false && _currentAmmo > 0) 
 			{
-				_myGunController.Shoot();
+				_myGunController.Shoot(_playerID);
 				_currentAmmo--;
 			}
 			else
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 		{
 			if (Input.GetButtonUp ("Fire2") && _gg._isPaused == false && _currentAmmo > 0) 
 			{
-				_myGunController.Shoot();
+				_myGunController.Shoot(_playerID);
 				_currentAmmo--;
 			}
 			else

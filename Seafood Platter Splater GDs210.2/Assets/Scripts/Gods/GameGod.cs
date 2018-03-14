@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 public class GameGod : MonoBehaviour 
 {
 	public int _maxAmmo;
@@ -105,9 +106,9 @@ public class GameGod : MonoBehaviour
 		_audioSource.Play();
 	}
 
-	public void ConfirmFishDeath(int score)
+	public void ConfirmFishDeath(int score, int playerID)
 	{
-		AddScore(score);
+		AddScore(score, playerID);
 		_totalFish = _totalFish - 1;
 
 		if(_totalFish < 1)
@@ -116,8 +117,9 @@ public class GameGod : MonoBehaviour
 		}
 	}
 
-	public void AddScore(int score)
+	public void AddScore(int score, int playerID)
 	{
+		_playerControllers[playerID - 1]._currentScore += score;
 		_currentScore += score;
 	}
 }

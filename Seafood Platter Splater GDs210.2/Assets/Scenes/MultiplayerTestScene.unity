@@ -160,7 +160,7 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 1797415489871878, guid: 962b099a887633a4ebb576aa7285e623,
     type: 2}
   _spawnTransform: {fileID: 1418925598}
-  gunBubbles: {fileID: 0}
+  gunBubbles: {fileID: 1197557376159828, guid: 1868e79102f755a40a76906e8705d7eb, type: 2}
   _shootAudio: {fileID: 8300000, guid: 5cafe57ed6e8ea14d88ae72dbb19b7b9, type: 3}
   _noAmmoAudio: {fileID: 8300000, guid: 419ec6157ab6bd24b860fc509507a6eb, type: 3}
 --- !u!23 &4284059
@@ -821,8 +821,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerID: 2
-  _gg: {fileID: 0}
   _currentAmmo: 20
+  _gg: {fileID: 0}
   _currentScore: 0
 --- !u!198 &126671888 stripped
 ParticleSystem:
@@ -2448,8 +2448,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerID: 1
-  _gg: {fileID: 0}
   _currentAmmo: 20
+  _gg: {fileID: 0}
   _currentScore: 0
 --- !u!1001 &962221942
 Prefab:
@@ -3302,7 +3302,7 @@ MonoBehaviour:
   _currentScore: 0
   _ammoHUD: {fileID: 51664173}
   _fishHUD: {fileID: 1272914988}
-  _pauseMenu: {fileID: 0}
+  _pauseMenu: {fileID: 1856534048}
   _soloHUD: {fileID: 1257057903}
   _isPaused: 0
   _pauseBubble: {fileID: 126671888}
@@ -4493,7 +4493,7 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 1797415489871878, guid: 962b099a887633a4ebb576aa7285e623,
     type: 2}
   _spawnTransform: {fileID: 1040299317}
-  gunBubbles: {fileID: 0}
+  gunBubbles: {fileID: 1197557376159828, guid: 1868e79102f755a40a76906e8705d7eb, type: 2}
   _shootAudio: {fileID: 8300000, guid: 5cafe57ed6e8ea14d88ae72dbb19b7b9, type: 3}
   _noAmmoAudio: {fileID: 8300000, guid: 419ec6157ab6bd24b860fc509507a6eb, type: 3}
 --- !u!23 &1895570016

@@ -32,7 +32,7 @@ public class EnemyMovementSimpleNoodle : MonoBehaviour
 	[SerializeField] private float _velocityTurnPoint;
 
 	// References.
-	private Renderer _myRenderer;
+//	private Renderer _myRenderer;
 	private Rigidbody _rb;
 
 	// Looping Variables.
@@ -45,7 +45,7 @@ public class EnemyMovementSimpleNoodle : MonoBehaviour
 	private void Start()
 	{
 		_enteredScreen = false;
-		_myRenderer = GetComponent<Renderer>();
+//		_myRenderer = GetComponent<Renderer>();
 		_rb = GetComponent<Rigidbody>();
 		_rb.velocity = new Vector3(_horizontalSpeed, 0.0f, 0.0f);
 	}

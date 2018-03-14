@@ -33,15 +33,15 @@ public class GunController : MonoBehaviour
 //		}
 	}
 
-	public void Shoot()
+	public void Shoot(int playerID)
 	{
 		GameObject newBullet = Instantiate(_bulletPrefab, _spawnTransform.position, _spawnTransform.rotation) as GameObject;
-		newBullet.GetComponent<SimpleBulletController>().controllerPos = transform.parent.GetComponent<GunLookAtMouse>().ControllerPos;
+		SimpleBulletController newBulletController = newBullet.GetComponent<SimpleBulletController>();
+		newBulletController.controllerPos = transform.parent.GetComponent<GunLookAtMouse>().ControllerPos;
+		newBulletController._bulletPlayerID = playerID;
+
 		_gg.PlayGlobal2DSound(_shootAudio);
-		GameObject gunBubble = Instantiate(gunBubbles, _spawnTransform.position, _spawnTransform.rotation) as GameObject;
-//		else
-//		{
-//			_gg.PlayGlobal2DSound(_noAmmoAudio);
-//		}
+
+		Instantiate(gunBubbles, _spawnTransform.position, _spawnTransform.rotation);
 	}
 }

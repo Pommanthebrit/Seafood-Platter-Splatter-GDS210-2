@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class SimpleBulletController : MonoBehaviour 
 {
+	[HideInInspector] public int _bulletPlayerID;
 	[SerializeField] private float _speed;
 	[SerializeField] private float _destroyTime;
 	private Rigidbody _rb;
