@@ -66,10 +66,11 @@ public class GameGod : MonoBehaviour
 	{
 		//Debug.Log("Total Fish GG: " + _totalFish);
 
-		_ammoHUD.GetComponent<Text> ().text = "x" + _currentAmmo.ToString ();
+		_ammoHUD.GetComponent<Text> ().text = "x" + _playerControllers[0]._currentAmmo.ToString (); // Player one current ammo
 		_fishHUD.GetComponent<Text> ().text = "x" + _totalFish.ToString ();
 
-		if (Input.GetKeyDown(KeyCode.Escape)) {
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
 			Pause ();
 		}
 	}
