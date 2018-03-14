@@ -13,16 +13,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _perfectRoundBonus: 0
   _fishSpawnerControllers:
-  - _mySpawnPoint: {fileID: 114650133431942478, guid: b1430546b8afbc14d86b7fc159821de7,
+  - _gg: {fileID: 0}
+    _mySpawnPoint: {fileID: 114650133431942478, guid: b1430546b8afbc14d86b7fc159821de7,
       type: 2}
     _fishToSpawn:
-    - _spawnFrequency: 3
-      _fishSpawnAmount: 5
-      _fishPrefab: {fileID: 1910034098090728, guid: 755c974a6a9530043a549153200b834e,
-        type: 2}
     - _spawnFrequency: 5
-      _fishSpawnAmount: 5
+      _fishSpawnAmount: 2
       _fishPrefab: {fileID: 1910034098090728, guid: 755c974a6a9530043a549153200b834e,
         type: 2}
-  - _mySpawnPoint: {fileID: 0}
-    _fishToSpawn: []
+    - _spawnFrequency: 13
+      _fishSpawnAmount: 1
+      _fishPrefab: {fileID: 1910034098090728, guid: 755c974a6a9530043a549153200b834e,
+        type: 2}
