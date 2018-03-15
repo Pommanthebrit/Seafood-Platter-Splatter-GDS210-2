@@ -34,6 +34,7 @@ public class EnemyMovementSimpleNoodle : MonoBehaviour
 	// References.
 //	private Renderer _myRenderer;
 	private Rigidbody _rb;
+	private EnemyController _myEnemyController;
 
 	// Looping Variables.
 	private bool _enteredScreen;
@@ -48,6 +49,7 @@ public class EnemyMovementSimpleNoodle : MonoBehaviour
 //		_myRenderer = GetComponent<Renderer>();
 		_rb = GetComponent<Rigidbody>();
 		_rb.velocity = new Vector3(_horizontalSpeed, 0.0f, 0.0f);
+		_myEnemyController = GetComponent<EnemyController>();
 	}
 
 	private void Update()
@@ -81,9 +83,8 @@ public class EnemyMovementSimpleNoodle : MonoBehaviour
 				}
 				else
 				{
-					// TO-DO_1: Add appropriate fish death by default method.
-					Destroy(this.gameObject); // Temp.
-					// :TO-DO_1.
+					_myEnemyController.FishEscape();
+					Destroy(transform.parent.gameObject); // TEMP.
 				}
 			}
 		}

@@ -109,6 +109,7 @@ public class GameGod : MonoBehaviour
 	public void ConfirmFishDeath(int score, int playerID)
 	{
 		AddScore(score, playerID);
+
 		_totalFish = _totalFish - 1;
 
 		if(_totalFish < 1)
@@ -131,6 +132,8 @@ public class GameGod : MonoBehaviour
 			playerCtrl._currentScore += scoreBonus;
 			playerCtrl._currentAmmo += ammoBonus;
 //			PlayGlobal2DSound(_perfectRoundAudio);
+
+			Debug.Log(playerCtrl._playerID + "_Current Score: " + playerCtrl._currentScore);
 		}
 	}
 

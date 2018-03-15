@@ -42,6 +42,7 @@ public class EnemyMovementWaypointSimple : MonoBehaviour
 	private void Start()
 	{
 		_rb = GetComponent<Rigidbody>();
+		_myEnemyController = GetComponent<EnemyController>();
 		SetWaypoints();
 		SetupOther();
 	}
