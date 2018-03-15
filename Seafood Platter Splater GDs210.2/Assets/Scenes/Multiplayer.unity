@@ -938,10 +938,10 @@ MonoBehaviour:
   _gg: {fileID: 0}
   _currentScore: 0
   _clipSize: 5
-  _reloadTime: 3
+  _reloadTime: 2
   _emptyClip: {fileID: 0}
   _reloadingClip: {fileID: 0}
-  _reloadedClip: {fileID: 0}
+  _reloadedClip: {fileID: 8300000, guid: 1e6ad8c43d06dc147b3c69ac384d3550, type: 3}
   _currentClip: 0
 --- !u!82 &111281844
 AudioSource:
@@ -2917,10 +2917,10 @@ MonoBehaviour:
   _gg: {fileID: 0}
   _currentScore: 0
   _clipSize: 5
-  _reloadTime: 3
+  _reloadTime: 2
   _emptyClip: {fileID: 0}
   _reloadingClip: {fileID: 0}
-  _reloadedClip: {fileID: 0}
+  _reloadedClip: {fileID: 8300000, guid: 1e6ad8c43d06dc147b3c69ac384d3550, type: 3}
   _currentClip: 0
 --- !u!82 &902963655
 AudioSource:

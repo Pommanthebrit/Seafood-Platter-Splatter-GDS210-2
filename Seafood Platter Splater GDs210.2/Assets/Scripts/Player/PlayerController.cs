@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if (_playerID == 1)
 		{
+			CheckReload ();
 			if (Input.GetButtonUp ("Fire1") && _gg._isPaused == false) 
 			{
 				TryShoot ();
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
 		}
 		else 
 		{
+			CheckReload ();
 			if (Input.GetButtonUp ("Fire2") && _gg._isPaused == false) 
 			{
 				TryShoot ();
@@ -52,29 +54,31 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
+	private void CheckReload()
+	{
+		if(_currentClip == 0 && _currentAmmo > 0 && !_reloading)
+		{
+				Invoke ("Reload", _reloadTime);
+				_reloading = true;
+				//					PlaySound(_reloadingClip);
+				Debug.Log ("Reloading");
+		}
+	}
+
 	private void TryShoot()
 	{
 		if(!_reloading)
 		{
-			if(_currentClip > 0)
-			{
-				_myGunController.Shoot(_playerID);
-				_currentClip--;
-			}
-			else
-			{
-				if(_currentAmmo > 0)
+				if(_currentAmmo == 0)
 				{
-					Invoke ("Reload", _reloadTime);
-					_reloading = true;
-//					PlaySound(_reloadingClip);
-					Debug.Log ("Reloading");
+					//					PlaySound(_emptyClip);
 				}
+
 				else
 				{
-//					PlaySound(_emptyClip);
+					_myGunController.Shoot(_playerID);
+					_currentClip--;
 				}
-			}
 		}
 	}
 
