@@ -2976,7 +2976,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 399436554}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
 --- !u!4 &1056501407
@@ -3287,6 +3287,7 @@ MonoBehaviour:
   _fishHUD_2: {fileID: 0}
   _pauseMenu: {fileID: 609570663}
   _soloHUD: {fileID: 220409759}
+  PlayBtn: {fileID: 399436557}
   _isPaused: 0
   _pauseBubble: {fileID: 126671888}
 --- !u!4 &1287715819

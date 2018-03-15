@@ -17,13 +17,13 @@ public class ScoreBoardController : MonoBehaviour {
 	public AudioClip wowNewHighScore; //assigns sound clip
 
 	void Start () {
-		//PlayerPrefs.SetInt ("Score", 20);
+		PlayerPrefs.SetInt ("Score", 50);
 		myScore = PlayerPrefs.GetInt ("Score"); //Gets players current score from player prefs
 		finalScore = PlayerPrefs.GetInt ("highScoreValues" + 9); //Gets #10 high score
 			if (myScore > finalScore) { //checks if current score > #10 high score
 				NewHighScore();	//calls function with time delay
 			} else {
-				nameInputButton.SetActive (false); //Disables name input box
+				DisableNameInput ();
 			}
 		highScoreValues = new int[highScores.Length]; //Sets the number of array entries in highScoreValues to the same amount as the array length of highScores
 		highScoreNames = new string[highScores.Length]; //Sets the number of array entries in highScoreNames to the same amount as the array length of highScores
@@ -68,6 +68,10 @@ public class ScoreBoardController : MonoBehaviour {
 
 	public void SubmitScore(){ //function for entering name on scoreboard. This function will be called by clicking the "Submit" button on the scoreboard (after the player has entered their name)
 		UpdateHighScore (myScore, playerName.text); //calls function and passes variables
+		Invoke("DisableNameInput", 0.5f); //Calls function with delay
+	}
+
+	public void DisableNameInput(){ //function for disabling name input on scoreboard
 		nameInputButton.SetActive (false); //Disables name input box
 	}
 

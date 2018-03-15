@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(AudioSource))]
 public class GameGod : MonoBehaviour 
@@ -23,6 +24,7 @@ public class GameGod : MonoBehaviour
 	[SerializeField] private GameObject _ammoHUD_2;
 	[SerializeField] private GameObject _fishHUD_2;
 	public Transform _pauseMenu, _soloHUD;
+	public Button PlayBtn;
 	[HideInInspector] public bool _isPaused = false;
 	public ParticleSystem _pauseBubble;
 
@@ -91,6 +93,8 @@ public class GameGod : MonoBehaviour
 			_isPaused = true; //GunController script checks to see if game is paused or not before firing
 			Time.timeScale = 0;
 			_pauseMenu.gameObject.SetActive (true);
+			PlayBtn.Select ();
+			PlayBtn.OnSelect (null);
 			_soloHUD.gameObject.SetActive (false);
 			_pauseBubble.Emit (30);
 		} else {
