@@ -7,15 +7,17 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(AudioSource))]
 public class GameGod : MonoBehaviour 
 {
-	public int _maxAmmo;
 	[HideInInspector] public int _totalFish;
 	[HideInInspector] public int _currentAmmo;
 	[HideInInspector] public int _currentScore;
 	[HideInInspector] public int _fishEscaped;
-
 	[HideInInspector] public int _maxFish;
 
+	[Header("Sounds")]
+	[SerializeField] private AudioClip _perfectRoundAudio;
+
 	//UI Elements
+	[Header("UI Elements")]
 	public GameObject _ammoHUD;
 	public GameObject _fishHUD;
 	public Transform _pauseMenu, _soloHUD;
@@ -64,7 +66,6 @@ public class GameGod : MonoBehaviour
 
 		_roundGod = GetComponent<RoundGod>();
 		_audioSource = GetComponent<AudioSource>();
-		ReplenishAmmo();
 	}
 
 	private void Update()
@@ -98,11 +99,6 @@ public class GameGod : MonoBehaviour
 		}
 	}
 
-	private void ReplenishAmmo()
-	{
-		_currentAmmo = _maxAmmo;
-	}
-
 	public void PlayGlobal2DSound(AudioClip audioClip)
 	{
 		_audioSource.Stop();
@@ -130,7 +126,12 @@ public class GameGod : MonoBehaviour
 
 	public void AddPerfectRoundBonus(int scoreBonus, int ammoBonus)
 	{
-
+		foreach(PlayerController playerCtrl in _playerControllers)
+		{
+			playerCtrl._currentScore += scoreBonus;
+			playerCtrl._currentAmmo += ammoBonus;
+//			PlayGlobal2DSound(_perfectRoundAudio);
+		}
 	}
 
 

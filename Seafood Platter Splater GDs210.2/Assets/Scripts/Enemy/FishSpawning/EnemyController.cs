@@ -33,6 +33,18 @@ public class EnemyController : MonoBehaviour
 	private void Die(int bulletPlayerID)
 	{
 		Destroy(transform.parent.gameObject);
-		_gg.ConfirmFishDeath(_scoreWorth, bulletPlayerID);
+		if(_endangered)
+		{
+			_gg.ConfirmFishDeath(-_scoreWorth, bulletPlayerID);
+		}
+		else
+		{
+			_gg.ConfirmFishDeath(_scoreWorth, bulletPlayerID);
+		}
+	}
+
+	public void FishEscape()
+	{
+		_gg._fishEscaped++;
 	}
 }

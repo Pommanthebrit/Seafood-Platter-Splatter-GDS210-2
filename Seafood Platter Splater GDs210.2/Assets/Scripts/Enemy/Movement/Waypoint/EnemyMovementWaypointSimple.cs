@@ -37,6 +37,7 @@ public class EnemyMovementWaypointSimple : MonoBehaviour
 	protected Transform _targetWaypoint;
 	private int _targetWaypointIndex;
 	private int _currentLoop;
+	private EnemyController _myEnemyController;
 
 	private void Start()
 	{
@@ -84,8 +85,8 @@ public class EnemyMovementWaypointSimple : MonoBehaviour
 		}
 		else
 		{
-			// TO-DO: Take fish score
-			Destroy(this.gameObject); // TEMP.
+			_myEnemyController.FishEscape();
+			Destroy(transform.parent.gameObject); // TEMP.
 		}
 	}
 
