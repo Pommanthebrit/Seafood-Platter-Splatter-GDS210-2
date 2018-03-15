@@ -3375,6 +3375,7 @@ MonoBehaviour:
   _pauseBubble: {fileID: 126671888}
   deathEffect: {fileID: 1022420353895396, guid: b87730406462201498db155290ff5006,
     type: 2}
+  Player: {fileID: 902963651}
 --- !u!4 &1287715819
 Transform:
   m_ObjectHideFlags: 0
@@ -4858,7 +4859,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc9d97df7006b98478d7b0b46245f520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gg: {fileID: 0}
   _bulletPrefab: {fileID: 1797415489871878, guid: 962b099a887633a4ebb576aa7285e623,
     type: 2}
   _spawnTransform: {fileID: 1040299317}

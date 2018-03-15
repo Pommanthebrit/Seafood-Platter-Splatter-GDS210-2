@@ -29,7 +29,7 @@ public class GameGod : MonoBehaviour
 	[HideInInspector] public bool _isPaused = false;
 	public ParticleSystem _pauseBubble;
 	public GameObject deathEffect;
-
+	public GameObject Player;
 	private RoundGod _roundGod;
 	private AudioSource _audioSource;
 
@@ -88,24 +88,31 @@ public class GameGod : MonoBehaviour
 		}
 	}
 
-	//******Check this script to solve unpause error, it fires a shot when clicking resume******
 	//Toggles pause menu and HUD
 	public void Pause ()
 	{
-		if (_pauseMenu.gameObject.activeInHierarchy == false) {
-			_isPaused = true; //GunController script checks to see if game is paused or not before firing
+		if (_pauseMenu.gameObject.activeInHierarchy == false) { //Checks to see if game is paused or not
+			_isPaused = true; 
 			Time.timeScale = 0;
 			_pauseMenu.gameObject.SetActive (true);
-			PlayBtn.Select ();
-			PlayBtn.OnSelect (null);
+			PlayBtn.Select (); //Selects the Resume button
+			PlayBtn.OnSelect (null); //Highlights the Resume button
 			_soloHUD.gameObject.SetActive (false);
 			_pauseBubble.Emit (30);
+			Player.GetComponent<PlayerController>().enabled= false; //disables player controller
 		} else {
 			_isPaused = false;
 			Time.timeScale = 1;
 			_pauseMenu.gameObject.SetActive (false);
 			_soloHUD.gameObject.SetActive (true);
+			StartCoroutine("TogglePlayerController"); //calls Coroutine
 		}
+	}
+
+	IEnumerator TogglePlayerController() //function for enabling or disabling player controller (to disable input while paused)
+	{
+		yield return new WaitForSeconds (0.3f); //wait time
+		Player.GetComponent<PlayerController>().enabled= true; //enables player controller
 	}
 
 	public void PlayGlobal2DSound(AudioClip audioClip)
@@ -153,7 +160,6 @@ public class GameGod : MonoBehaviour
 			playerCtrl._currentScore += scoreBonus;
 			playerCtrl._currentAmmo += ammoBonus;
 //			PlayGlobal2DSound(_perfectRoundAudio);
-
 			Debug.Log(playerCtrl._playerID + "_Current Score: " + playerCtrl._currentScore);
 		}
 	}

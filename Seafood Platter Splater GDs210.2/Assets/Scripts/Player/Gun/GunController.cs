@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour 
 {
-	[SerializeField] private GameGod _gg;
+	private GameGod _gg;
 	[SerializeField] private GameObject _bulletPrefab;
 	[SerializeField] private Transform _spawnTransform;
 

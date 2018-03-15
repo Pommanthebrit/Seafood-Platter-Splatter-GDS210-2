@@ -29,7 +29,6 @@ public class PlayerController : MonoBehaviour
 		_audioSource = GetComponent<AudioSource>();
 		_myGunController = GetComponentInChildren<GunController>();
 		gameObject.GetComponent<GunLookAtMouse>()._playerID = _playerID;
-
 		_currentClip = _clipSize;
 		_reloading = false;
 	}
@@ -38,7 +37,8 @@ public class PlayerController : MonoBehaviour
 	{
 		if (_playerID == 1)
 		{
-			CheckReload ();
+			//Edit by Aston Olsen. I re-wrote a bunch of the shooting and reloading code to place reload checks in the update function. Previously the gun wasn't checking if the mag was empty until the shoot function was called, meaning you had to click fire again when the mag was empty to reload
+			CheckReload ();  
 			if (Input.GetButtonUp ("Fire1") && _gg._isPaused == false) 
 			{
 				TryShoot ();
@@ -54,13 +54,12 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	private void CheckReload()
+	private void CheckReload() //function for checking if the gun needs to reload
 	{
 		if(_currentClip == 0 && _currentAmmo > 0 && !_reloading)
 		{
 				Invoke ("Reload", _reloadTime);
 				_reloading = true;
-				//					PlaySound(_reloadingClip);
 				Debug.Log ("Reloading");
 		}
 	}
@@ -69,11 +68,10 @@ public class PlayerController : MonoBehaviour
 	{
 		if(!_reloading)
 		{
-				if(_currentAmmo == 0)
+				if(_currentAmmo == 0 && _currentClip == 0)
 				{
-					//					PlaySound(_emptyClip);
+//					PlaySound(_emptyClip);
 				}
-
 				else
 				{
 					_myGunController.Shoot(_playerID);
@@ -105,6 +103,5 @@ public class PlayerController : MonoBehaviour
 		_audioSource.Stop();
 		_audioSource.clip = clip;
 		_audioSource.Play();
-
 	}
 }
