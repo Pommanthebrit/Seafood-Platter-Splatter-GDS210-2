@@ -118,11 +118,23 @@ public class GameGod : MonoBehaviour
 		}
 	}
 
+	public void ConfirmFishEscape()
+	{
+		_fishEscaped++;
+		_totalFish--;
+		print("Current Fish Escaped: " + _fishEscaped);
+
+		if(_totalFish < 1)
+		{
+			_roundGod.EndRound();
+		}
+	}
+
 	public void AddScore(int score, int playerID)
 	{
 		_playerControllers[playerID - 1]._currentScore += score;
 		print("Player " + playerID + ": " + _playerControllers[playerID - 1]._currentScore);
-		_currentScore += score;
+//		_currentScore += score;
 	}
 
 	public void AddPerfectRoundBonus(int scoreBonus, int ammoBonus)

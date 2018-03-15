@@ -45,8 +45,6 @@ public class EnemyController : MonoBehaviour
 
 	public void FishEscape()
 	{
-		_gg._fishEscaped++;
-		_gg._totalFish--;
-		print("Current Fish Escaped: " + _gg._fishEscaped);
+		_gg.ConfirmFishEscape();
 	}
 }
