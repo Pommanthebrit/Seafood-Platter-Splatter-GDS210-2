@@ -171,6 +171,7 @@ public class GameGod : MonoBehaviour
 	public void GameOver()
 	{
 		PlayerPrefs.SetInt("Score", _currentScore); //stores score in player prefs
+		//PlayerPrefs.SetInt("Score", _playerControllers[playerID - 1]._currentScore); //stores score in player prefs
 		StartCoroutine("Load");
 	}
 

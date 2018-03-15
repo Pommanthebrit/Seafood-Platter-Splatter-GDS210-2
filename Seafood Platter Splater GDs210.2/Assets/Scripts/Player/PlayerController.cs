@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
 	private void Start()
 	{
+		_audioSource = GetComponent<AudioSource>();
 		_myGunController = GetComponentInChildren<GunController>();
 		gameObject.GetComponent<GunLookAtMouse>()._playerID = _playerID;
 
@@ -92,7 +93,7 @@ public class PlayerController : MonoBehaviour
 
 		_reloading = false;
 		Debug.Log ("Reloaded");
-//		PlaySound(_reloadedClip);
+		PlaySound(_reloadedClip);
 	}
 
 	private void PlaySound(AudioClip clip)
@@ -100,5 +101,6 @@ public class PlayerController : MonoBehaviour
 		_audioSource.Stop();
 		_audioSource.clip = clip;
 		_audioSource.Play();
+
 	}
 }
