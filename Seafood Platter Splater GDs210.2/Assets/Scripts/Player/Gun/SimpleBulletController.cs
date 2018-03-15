@@ -11,7 +11,6 @@ public class SimpleBulletController : MonoBehaviour
 	private Rigidbody _rb;
 	public Vector3 controllerPos;
 
-
 	private void Start()
 	{
 		_rb = GetComponent<Rigidbody>();

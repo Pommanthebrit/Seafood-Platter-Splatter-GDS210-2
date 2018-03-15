@@ -10,10 +10,6 @@ public class GunController : MonoBehaviour
 
 	public GameObject gunBubbles; //Particle effect to instantiate
 
-	[Header("Audio Settings")]
-	[SerializeField] private AudioClip _shootAudio;
-	[SerializeField] private AudioClip _noAmmoAudio;
-
 	private void Start()
 	{
 		_gg = GameObject.FindGameObjectWithTag("GameGod").GetComponent<GameGod>();
@@ -39,9 +35,6 @@ public class GunController : MonoBehaviour
 		SimpleBulletController newBulletController = newBullet.GetComponent<SimpleBulletController>();
 		newBulletController.controllerPos = transform.parent.GetComponent<GunLookAtMouse>().ControllerPos;
 		newBulletController._bulletPlayerID = playerID;
-
-		_gg.PlayGlobal2DSound(_shootAudio);
-
 		Instantiate(gunBubbles, _spawnTransform.position, _spawnTransform.rotation);
 	}
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class PlayerController : MonoBehaviour 
 {
 	public int _playerID;
@@ -12,6 +13,12 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private int _clipSize;
 	[SerializeField] private float _reloadTime;
 
+	[Header("Audio Settings")]
+	[SerializeField] private AudioClip _emptyClip;
+	[SerializeField] private AudioClip _reloadingClip;
+	[SerializeField] private AudioClip _reloadedClip;
+
+	private AudioSource _audioSource;
 	private int _currentClip;
 	private bool _reloading;
 
@@ -55,18 +62,43 @@ public class PlayerController : MonoBehaviour
 			}
 			else
 			{
-				Invoke ("Reload", _reloadTime);
-				_reloading = true;
-				Debug.Log ("Reloading");
+				if(_currentAmmo > 0)
+				{
+					Invoke ("Reload", _reloadTime);
+					_reloading = true;
+//					PlaySound(_reloadingClip);
+					Debug.Log ("Reloading");
+				}
+				else
+				{
+//					PlaySound(_emptyClip);
+				}
 			}
 		}
 	}
 
 	private void Reload()
 	{
-		Debug.Log ("Reloaded");
+		if(_currentAmmo > _clipSize)
+		{
+			_currentClip = _clipSize;
+			_currentAmmo -= _clipSize;
+		}
+		else
+		{
+			_currentClip = _currentAmmo;
+			_currentAmmo = 0;
+		}
+
 		_reloading = false;
-		_currentClip = _clipSize;
-		_currentAmmo -= _clipSize;
+		Debug.Log ("Reloaded");
+//		PlaySound(_reloadedClip);
+	}
+
+	private void PlaySound(AudioClip clip)
+	{
+		_audioSource.Stop();
+		_audioSource.clip = clip;
+		_audioSource.Play();
 	}
 }
