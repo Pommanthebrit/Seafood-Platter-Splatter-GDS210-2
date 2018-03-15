@@ -58,9 +58,9 @@ public class PlayerController : MonoBehaviour
 	{
 		if(_currentClip == 0 && _currentAmmo > 0 && !_reloading)
 		{
-				Invoke ("Reload", _reloadTime);
-				_reloading = true;
-				Debug.Log ("Reloading");
+			Invoke ("Reload", _reloadTime);
+			_reloading = true;
+			Debug.Log ("Reloading");
 		}
 	}
 
@@ -68,15 +68,17 @@ public class PlayerController : MonoBehaviour
 	{
 		if(!_reloading)
 		{
-				if(_currentAmmo == 0 && _currentClip == 0)
-				{
+			if(_currentAmmo == 0 && _currentClip == 0)
+			{
 //					PlaySound(_emptyClip);
-				}
-				else
-				{
-					_myGunController.Shoot(_playerID);
-					_currentClip--;
-				}
+			}
+			else
+			{
+				_myGunController.Shoot(_playerID);
+				_currentClip--;
+
+				CheckReload();
+			}
 		}
 	}
 
