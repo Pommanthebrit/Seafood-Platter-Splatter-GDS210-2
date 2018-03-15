@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private AudioClip _reloadedClip;
 
 	private AudioSource _audioSource;
-	private int _currentClip;
+	public int _currentClip;
 	private bool _reloading;
 
 	private GunController _myGunController;

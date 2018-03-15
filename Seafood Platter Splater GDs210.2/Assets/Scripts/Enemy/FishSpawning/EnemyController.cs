@@ -32,6 +32,7 @@ public class EnemyController : MonoBehaviour
 	// Destroys Enemy and Adds score.
 	private void Die(int bulletPlayerID)
 	{
+		Instantiate(_gg.deathEffect, gameObject.transform.position, gameObject.transform.rotation);
 		Destroy(transform.parent.gameObject);
 		if(_endangered)
 		{
