@@ -2426,6 +2426,9 @@ MonoBehaviour:
   _currentScore: 0
   _clipSize: 5
   _reloadTime: 3
+  _emptyClip: {fileID: 0}
+  _reloadingClip: {fileID: 0}
+  _reloadedClip: {fileID: 0}
 --- !u!1 &934850128
 GameObject:
   m_ObjectHideFlags: 0
@@ -3272,14 +3275,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f20d1ae628a5f4c9a155f9c9c2e304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxAmmo: 100
   _totalFish: 0
   _currentAmmo: 0
   _currentScore: 0
   _fishEscaped: 0
   _maxFish: 0
+  _perfectRoundAudio: {fileID: 0}
   _ammoHUD: {fileID: 1686208993}
   _fishHUD: {fileID: 901847913}
+  _ammoHUD_2: {fileID: 0}
+  _fishHUD_2: {fileID: 0}
   _pauseMenu: {fileID: 609570663}
   _soloHUD: {fileID: 220409759}
   _isPaused: 0
@@ -4772,8 +4777,6 @@ MonoBehaviour:
     type: 2}
   _spawnTransform: {fileID: 1040299317}
   gunBubbles: {fileID: 1197557376159828, guid: 1868e79102f755a40a76906e8705d7eb, type: 2}
-  _shootAudio: {fileID: 8300000, guid: 5cafe57ed6e8ea14d88ae72dbb19b7b9, type: 3}
-  _noAmmoAudio: {fileID: 8300000, guid: 419ec6157ab6bd24b860fc509507a6eb, type: 3}
 --- !u!23 &1895570016
 MeshRenderer:
   m_ObjectHideFlags: 0
