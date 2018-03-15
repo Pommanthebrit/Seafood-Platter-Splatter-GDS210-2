@@ -75,7 +75,7 @@ public class GameGod : MonoBehaviour
 		_ammoHUD.GetComponent<Text> ().text = "x" + _playerControllers[0]._currentAmmo.ToString (); // Player one current ammo
 		_fishHUD.GetComponent<Text> ().text = "x" + _totalFish.ToString ();
 
-		if (Input.GetKeyDown(KeyCode.Escape))
+		if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonUp("Start"))
 		{
 			Pause ();
 		}
