@@ -18,8 +18,10 @@ public class GameGod : MonoBehaviour
 
 	//UI Elements
 	[Header("UI Elements")]
-	public GameObject _ammoHUD;
-	public GameObject _fishHUD;
+	[SerializeField] private GameObject _ammoHUD;
+	[SerializeField] private GameObject _fishHUD;
+	[SerializeField] private GameObject _ammoHUD_2;
+	[SerializeField] private GameObject _fishHUD_2;
 	public Transform _pauseMenu, _soloHUD;
 	[HideInInspector] public bool _isPaused = false;
 	public ParticleSystem _pauseBubble;
