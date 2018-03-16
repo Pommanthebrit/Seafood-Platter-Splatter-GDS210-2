@@ -20,7 +20,7 @@ public class EnemyMovementSimpleNoodle : MonoBehaviour
 	[SerializeField] private float _turnAroundOverscan;
 
 
-	[Header("Speed Settings")]
+	[Header("Movement Settings")]
 
 	[Tooltip("The speed of which the object will move horizontally across the screen.")]
 	[SerializeField] private float _horizontalSpeed;
@@ -30,6 +30,9 @@ public class EnemyMovementSimpleNoodle : MonoBehaviour
 
 	[Tooltip("The y-velocity of which the object will reach before reversing the force input.")]
 	[SerializeField] private float _velocityTurnPoint;
+
+	[Tooltip("This bool will make it either move left or right on spawn")]
+	[SerializeField] private bool _moveLeft;
 
 	// References.
 //	private Renderer _myRenderer;
@@ -48,7 +51,14 @@ public class EnemyMovementSimpleNoodle : MonoBehaviour
 		_enteredScreen = false;
 //		_myRenderer = GetComponent<Renderer>();
 		_rb = GetComponent<Rigidbody>();
-		_rb.velocity = new Vector3(_horizontalSpeed, 0.0f, 0.0f);
+
+		// Set movement.
+		if(_moveLeft)
+			_rb.velocity = new Vector3(-_horizontalSpeed, 0.0f, 0.0f);
+		else
+			_rb.velocity = new Vector3(-_horizontalSpeed, 0.0f, 0.0f);
+
+
 		_myEnemyController = GetComponent<EnemyController>();
 	}
 
@@ -72,9 +82,8 @@ public class EnemyMovementSimpleNoodle : MonoBehaviour
 					}
 					else if(_loopAmount != 0)
 					{
-						// TO-DO_1: Add appropriate fish death by default method.
-						Destroy(this.gameObject); // Temp.
-						// :TO-DO_1.
+						_myEnemyController.FishEscape();
+						Destroy(transform.parent.gameObject); // TEMP.
 					}
 					else
 					{
