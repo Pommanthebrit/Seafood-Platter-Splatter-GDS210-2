@@ -32,12 +32,16 @@ public class EnemyMovementWaypointSimple : MonoBehaviour
 
 	// References.
 	protected Rigidbody _rb;
+	private EnemyController _myEnemyController;
 
 	// Waypoint Variables.
-	protected Transform _targetWaypoint;
+	public Transform _targetWaypoint;
 	private int _targetWaypointIndex;
 	private int _currentLoop;
-	private EnemyController _myEnemyController;
+
+	// Other Variables.
+	[SerializeField] protected bool _correctFlipping;
+	[SerializeField] protected bool _stopFlipping;
 
 	private void Start()
 	{
@@ -115,9 +119,22 @@ public class EnemyMovementWaypointSimple : MonoBehaviour
 
 	private void TryFlip()
 	{
-		if(transform.position.x < _targetWaypoint.transform.position.x)
-			transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
-		else
-			transform.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
+		if(!_stopFlipping)
+		{
+			if(transform.position.x < _targetWaypoint.transform.position.x)
+			{
+				if(_correctFlipping)
+					transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+				else
+					transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+			}
+			else
+			{
+				if(_correctFlipping)
+					transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+				else
+					transform.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
+			}
+		}
 	}
 }
