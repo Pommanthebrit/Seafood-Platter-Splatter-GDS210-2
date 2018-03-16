@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
 	[Header("UI Settings")]
 	[SerializeField] private Text _currentAmmoText;
 	[SerializeField] private Text _currentClipText;
+	[SerializeField] private Text _currentScoreText;
 
 	private AudioSource _audioSource;
 	[HideInInspector] public int _currentClip;
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
 		// Ammo UI element references.
 		_currentAmmoText = _currentAmmoText.GetComponent<Text>();
 		_currentClipText = _currentClipText.GetComponent<Text>();
+		_currentScoreText = _currentScoreText.GetComponent<Text>();
 
 		_currentClip = _clipSize;
 		_reloading = false;
@@ -78,6 +80,7 @@ public class PlayerController : MonoBehaviour
 		// Sets UI text to show correct values.
 		_currentAmmoText.text = _currentAmmo.ToString();
 		_currentClipText.text = _currentClip.ToString();
+		_currentScoreText.text = _currentScore.ToString();
 	}
 
 	private void CheckReload() //function for checking if the gun needs to reload
