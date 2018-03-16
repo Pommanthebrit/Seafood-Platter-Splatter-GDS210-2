@@ -29,7 +29,6 @@ public class GameGod : MonoBehaviour
 	public GameObject Player;
 	private RoundGod _roundGod;
 	private AudioSource _audioSource;
-
 	private List<PlayerController> _playerControllers;
 	private PlayerController[] _playerControllersArray;
 
@@ -159,10 +158,9 @@ public class GameGod : MonoBehaviour
 			playerCtrl._currentScore += scoreBonus;
 			playerCtrl._currentAmmo += ammoBonus;
 //			PlayGlobal2DSound(_perfectRoundAudio);
-			Debug.Log(playerCtrl._playerID + "_Current Score: " + playerCtrl._currentScore);
+			//Debug.Log(playerCtrl._playerID + "_Current Score: " + playerCtrl._currentScore);
 		}
 	}
-
 
 	public void LoseGame()
 	{
@@ -178,14 +176,18 @@ public class GameGod : MonoBehaviour
 		
 	public void GameOver()
 	{
-		PlayerPrefs.SetInt("Score", _currentScore); //stores score in player prefs
-		//PlayerPrefs.SetInt("Score", _playerControllers[playerID - 1]._currentScore); //stores score in player prefs
+		PlayerPrefs.SetInt("Score1", _playerControllers[0]._currentScore); //stores score in player prefs
+		if (_playerControllers.Count > 1) {
+			PlayerPrefs.SetInt ("Score2", _playerControllers [1]._currentScore); //stores score in player prefs
+			PlayerPrefs.SetInt ("twoPlayer", 1); //stores Player count in player prefs
+		} else {
+			PlayerPrefs.SetInt ("twoPlayer", 0); //stores Player count in player prefs
+		}
 		StartCoroutine("Load");
 	}
 
 	IEnumerator Load() { //coroutine for loading a scene
 		yield return new WaitForSeconds (0.5f); //wait time
-		SceneManager.LoadScene ("Scoreboard"); //Loads the scene
+		SceneManager.LoadScene ("Scoreboard"); //Loads the scene	
 	}
-
 }

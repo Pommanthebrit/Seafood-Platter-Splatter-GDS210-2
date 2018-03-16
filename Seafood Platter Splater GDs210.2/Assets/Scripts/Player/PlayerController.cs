@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
 			{
 				Invoke ("Reload", _reloadTime);
 				_reloading = true;
+				Debug.Log ("Reloading");
 			}
 		}
 		else 
@@ -69,11 +70,11 @@ public class PlayerController : MonoBehaviour
 			}
 
 			// On Reload button press make sure: game is not paused, not reloading and not a full clip.
-			if(Input.GetButtonUp("Reload_2")  && _gg._isPaused == false && !_reloading && _currentClip < _clipSize)
+			if(Input.GetButtonUp("Reload_2")  && _gg._isPaused == false && !_reloading && _currentClip < _clipSize && _currentAmmo > 0)
 			{
-				print("What Up");
 				Invoke ("Reload", _reloadTime);
 				_reloading = true;
+				Debug.Log ("Reloading");
 			}
 		}
 
@@ -127,7 +128,6 @@ public class PlayerController : MonoBehaviour
 		}
 
 		_reloading = false;
-		Debug.Log ("Reloaded");
 		PlaySound(_reloadedClip);
 	}
 

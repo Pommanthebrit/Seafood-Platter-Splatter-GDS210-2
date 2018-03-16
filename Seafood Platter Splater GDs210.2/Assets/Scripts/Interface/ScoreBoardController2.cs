@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 //script written by Aston Olsen
 
-public class ScoreBoardController : MonoBehaviour {
+public class ScoreBoardController2 : MonoBehaviour {
 
 	public Text[] highScores; //Array for high score text fields
 	int[] highScoreValues; //Array for high score values
@@ -16,11 +16,10 @@ public class ScoreBoardController : MonoBehaviour {
 	public InputField playerName; //Player name input on scoreboard
 	AudioSource myAudioSource;
 	public AudioClip wowNewHighScore; //assigns sound clip
-	public int twoPlayer;
 
 	void Start () {
-		twoPlayer = PlayerPrefs.GetInt ("twoPlayer"); //Gets int from player prefs
-		myScore = PlayerPrefs.GetInt ("Score1"); //Gets players current score from player prefs
+		print ("Score 2" + myScore);
+		myScore = PlayerPrefs.GetInt ("Score2"); //Gets players current score from player prefs
 		finalScore = PlayerPrefs.GetInt ("highScoreValues" + 9); //Gets #10 high score
 			if (myScore > finalScore) { //checks if current score > #10 high score
 				NewHighScore();	//calls function with time delay
@@ -75,13 +74,6 @@ public class ScoreBoardController : MonoBehaviour {
 
 	public void DisableNameInput(){ //function for disabling name input on scoreboard
 		nameInputButton.SetActive (false); //Disables name input box
-		if (twoPlayer == 1) {
-			Invoke ("Load", 3f);
-		}
-	}
-
-	public void Load(){
-		SceneManager.LoadScene ("Scoreboard2"); //Loads the scene
 	}
 
 	public void NewHighScore() { //function for when player gets a new high score
