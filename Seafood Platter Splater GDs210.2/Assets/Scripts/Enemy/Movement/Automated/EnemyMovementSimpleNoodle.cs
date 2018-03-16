@@ -32,7 +32,7 @@ public class EnemyMovementSimpleNoodle : MonoBehaviour
 	[SerializeField] private float _velocityTurnPoint;
 
 	[Tooltip("This bool will make it either move left or right on spawn")]
-	[SerializeField] private bool _moveLeft;
+	[SerializeField] protected bool _moveLeft;
 
 	// References.
 //	private Renderer _myRenderer;

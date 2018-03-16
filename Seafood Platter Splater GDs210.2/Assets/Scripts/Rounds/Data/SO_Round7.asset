@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e52175f9b927743a42084aed7774de, type: 3}
+  m_Name: SO_Round7
+  m_EditorClassIdentifier: 
+  _perfectRoundBonus: 45
+  _perfectRoundAmmoBonus: 60
+  _fishSpawnerControllers:
+  - _gg: {fileID: 0}
+    _mySpawnPoint: {fileID: 114650133431942478, guid: b1430546b8afbc14d86b7fc159821de7,
+      type: 2}
+    _fishToSpawn:
+    - _spawnFrequency: 10
+      _fishSpawnAmount: 12
+      _fishPrefab: {fileID: 1140759063220138, guid: c6d51a0a407d00349b744cc7cfe983e5,
+        type: 2}
+    - _spawnFrequency: 23
+      _fishSpawnAmount: 1
+      _fishPrefab: {fileID: 1140759063220138, guid: c6d51a0a407d00349b744cc7cfe983e5,
+        type: 2}
+    - _spawnFrequency: 24
+      _fishSpawnAmount: 1
+      _fishPrefab: {fileID: 1140759063220138, guid: c6d51a0a407d00349b744cc7cfe983e5,
+        type: 2}
+  - _gg: {fileID: 0}
+    _mySpawnPoint: {fileID: 114650133431942478, guid: a9995e9156057cd4cb99b21c9265b37e,
+      type: 2}
+    _fishToSpawn:
+    - _spawnFrequency: 3
+      _fishSpawnAmount: 5
+      _fishPrefab: {fileID: 1140759063220138, guid: c6d51a0a407d00349b744cc7cfe983e5,
+        type: 2}
+    - _spawnFrequency: 23
+      _fishSpawnAmount: 1
+      _fishPrefab: {fileID: 1140759063220138, guid: c6d51a0a407d00349b744cc7cfe983e5,
+        type: 2}
+    - _spawnFrequency: 24
+      _fishSpawnAmount: 1
+      _fishPrefab: {fileID: 1140759063220138, guid: c6d51a0a407d00349b744cc7cfe983e5,
+        type: 2}
+  - _gg: {fileID: 0}
+    _mySpawnPoint: {fileID: 114650133431942478, guid: 60b85117874a51640acfe4483220d2af,
+      type: 2}
+    _fishToSpawn:
+    - _spawnFrequency: 7
+      _fishSpawnAmount: 3
+      _fishPrefab: {fileID: 1140759063220138, guid: c6d51a0a407d00349b744cc7cfe983e5,
+        type: 2}
+    - _spawnFrequency: 23
+      _fishSpawnAmount: 1
+      _fishPrefab: {fileID: 1140759063220138, guid: c6d51a0a407d00349b744cc7cfe983e5,
+        type: 2}
+    - _spawnFrequency: 24
+      _fishSpawnAmount: 1
+      _fishPrefab: {fileID: 1140759063220138, guid: c6d51a0a407d00349b744cc7cfe983e5,
+        type: 2}
+  - _gg: {fileID: 0}
+    _mySpawnPoint: {fileID: 114650133431942478, guid: 66b5c94f1dc2163478fedaf255983351,
+      type: 2}
+    _fishToSpawn:
+    - _spawnFrequency: 20
+      _fishSpawnAmount: 6
+      _fishPrefab: {fileID: 1140759063220138, guid: e0f9a37945604cc4aa43bee001fe8922,
+        type: 2}
+    - _spawnFrequency: 23
+      _fishSpawnAmount: 1
+      _fishPrefab: {fileID: 1140759063220138, guid: e0f9a37945604cc4aa43bee001fe8922,
+        type: 2}
+    - _spawnFrequency: 24
+      _fishSpawnAmount: 1
+      _fishPrefab: {fileID: 1140759063220138, guid: e0f9a37945604cc4aa43bee001fe8922,
+        type: 2}
+  - _gg: {fileID: 0}
+    _mySpawnPoint: {fileID: 114650133431942478, guid: bc15efc7e9112434896e06f21cf16a43,
+      type: 2}
+    _fishToSpawn:
+    - _spawnFrequency: 7
+      _fishSpawnAmount: 3
+      _fishPrefab: {fileID: 1140759063220138, guid: e0f9a37945604cc4aa43bee001fe8922,
+        type: 2}
+    - _spawnFrequency: 23
+      _fishSpawnAmount: 1
+      _fishPrefab: {fileID: 1140759063220138, guid: e0f9a37945604cc4aa43bee001fe8922,
+        type: 2}
+    - _spawnFrequency: 24
+      _fishSpawnAmount: 1
+      _fishPrefab: {fileID: 1140759063220138, guid: e0f9a37945604cc4aa43bee001fe8922,
+        type: 2}
+  - _gg: {fileID: 0}
+    _mySpawnPoint: {fileID: 114650133431942478, guid: 66b5c94f1dc2163478fedaf255983351,
+      type: 2}
+    _fishToSpawn:
+    - _spawnFrequency: 2
+      _fishSpawnAmount: 3
+      _fishPrefab: {fileID: 1140759063220138, guid: e0f9a37945604cc4aa43bee001fe8922,
+        type: 2}
+    - _spawnFrequency: 23
+      _fishSpawnAmount: 2
+      _fishPrefab: {fileID: 1140759063220138, guid: e0f9a37945604cc4aa43bee001fe8922,
+        type: 2}
+    - _spawnFrequency: 24
+      _fishSpawnAmount: 2
+      _fishPrefab: {fileID: 1140759063220138, guid: e0f9a37945604cc4aa43bee001fe8922,
+        type: 2}

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SmoothedNoodleWaypointMovement : SimpleWaypointSmoothMove 
 {
-	[SerializeField] private float _horizontalSpeed;
 	[SerializeField] private float _verticalSpeed;
 	[SerializeField] private float _velocityTurnPoint;
 
@@ -12,7 +11,6 @@ public class SmoothedNoodleWaypointMovement : SimpleWaypointSmoothMove
 
 	protected override void SetupOther ()
 	{
-//		_rb.velocity = new Vector3(_horizontalSpeed, 0.0f, 0.0f);
 	}
 
 	protected override void AddOtherMovement ()
