@@ -38,15 +38,21 @@ public class PlayerController : MonoBehaviour
 		if (_playerID == 1)
 		{
 			//Edit by Aston Olsen. I re-wrote a bunch of the shooting and reloading code to place reload checks in the update function. Previously the gun wasn't checking if the mag was empty until the shoot function was called, meaning you had to click fire again when the mag was empty to reload
-			CheckReload ();  
 			if (Input.GetButtonUp ("Fire1") && _gg._isPaused == false) 
 			{
 				TryShoot ();
 			}
+
+
+			if(Input.GetButtonUp("Reload_1")  && _gg._isPaused == false && !_reloading && _currentClip < _clipSize)
+			{
+				print("What Up");
+				Invoke ("Reload", _reloadTime);
+				_reloading = true;
+			}
 		}
 		else 
 		{
-			CheckReload ();
 			if (Input.GetButtonUp ("Fire2") && _gg._isPaused == false) 
 			{
 				TryShoot ();
@@ -86,8 +92,9 @@ public class PlayerController : MonoBehaviour
 	{
 		if(_currentAmmo > _clipSize)
 		{
+			_currentAmmo -= _clipSize - _currentClip;
 			_currentClip = _clipSize;
-			_currentAmmo -= _clipSize;
+
 		}
 		else
 		{
