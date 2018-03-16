@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1683558, g: 0.28301036, b: 0.34518605, a: 1}
+  m_IndirectSpecularColor: {r: 0.08491448, g: 0.22371748, b: 0.29334307, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -7329,6 +7329,76 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &806842044
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400018, guid: d9860dd51b4c4df439d9eb84cef2e858, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.09660205
+      objectReference: {fileID: 0}
+    - target: {fileID: 400018, guid: d9860dd51b4c4df439d9eb84cef2e858, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7897047
+      objectReference: {fileID: 0}
+    - target: {fileID: 400018, guid: d9860dd51b4c4df439d9eb84cef2e858, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.06431935
+      objectReference: {fileID: 0}
+    - target: {fileID: 400018, guid: d9860dd51b4c4df439d9eb84cef2e858, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.056929454
+      objectReference: {fileID: 0}
+    - target: {fileID: 400018, guid: d9860dd51b4c4df439d9eb84cef2e858, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.94075805
+      objectReference: {fileID: 0}
+    - target: {fileID: 400018, guid: d9860dd51b4c4df439d9eb84cef2e858, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.3336552
+      objectReference: {fileID: 0}
+    - target: {fileID: 400018, guid: d9860dd51b4c4df439d9eb84cef2e858, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.020190964
+      objectReference: {fileID: 0}
+    - target: {fileID: 400018, guid: d9860dd51b4c4df439d9eb84cef2e858, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400018, guid: d9860dd51b4c4df439d9eb84cef2e858, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 185.588
+      objectReference: {fileID: 0}
+    - target: {fileID: 400018, guid: d9860dd51b4c4df439d9eb84cef2e858, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 8.891001
+      objectReference: {fileID: 0}
+    - target: {fileID: 400018, guid: d9860dd51b4c4df439d9eb84cef2e858, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 38.717003
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: d9860dd51b4c4df439d9eb84cef2e858, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 50dc7ddd1e511224bb48869ae2228382, type: 2}
+    - target: {fileID: 400018, guid: d9860dd51b4c4df439d9eb84cef2e858, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 400018, guid: d9860dd51b4c4df439d9eb84cef2e858, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 400018, guid: d9860dd51b4c4df439d9eb84cef2e858, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d9860dd51b4c4df439d9eb84cef2e858, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1 &845432280
 GameObject:
   m_ObjectHideFlags: 0
@@ -10957,6 +11027,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
+--- !u!1 &1516424382 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100018, guid: d9860dd51b4c4df439d9eb84cef2e858, type: 3}
+  m_PrefabInternal: {fileID: 806842044}
+--- !u!114 &1516424385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1516424382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b409a2c4bb152d41b75150a1b2663e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mySpeed: 0
+  waitTime: 0
+  goClockwise: 0
 --- !u!1 &1679738600
 GameObject:
   m_ObjectHideFlags: 0
