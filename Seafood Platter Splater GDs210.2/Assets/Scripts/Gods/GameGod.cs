@@ -19,8 +19,8 @@ public class GameGod : MonoBehaviour
 
 	//UI Elements
 	[Header("UI Elements")]
-	[SerializeField] private GameObject _ammoHUD;
-	[SerializeField] private GameObject _clipHUD;
+//	[SerializeField] private GameObject _ammoHUD;
+//	[SerializeField] private GameObject _clipHUD;
 	[SerializeField] private GameObject _fishHUD;
 	[SerializeField] private GameObject _ammoHUD_2;
 	[SerializeField] private GameObject _fishHUD_2;
@@ -78,8 +78,8 @@ public class GameGod : MonoBehaviour
 	{
 		//Debug.Log("Total Fish GG: " + _totalFish);
 
-		_ammoHUD.GetComponent<Text> ().text = "x" + _playerControllers[0]._currentAmmo.ToString (); // Player one current ammo
-		_clipHUD.GetComponent<Text> ().text = "x" + _playerControllers[0]._currentClip.ToString (); // Player one current clip
+//		_ammoHUD.GetComponent<Text> ().text = "x" + _playerControllers[0]._currentAmmo.ToString (); // Player one current ammo
+//		_clipHUD.GetComponent<Text> ().text = "x" + _playerControllers[0]._currentClip.ToString (); // Player one current clip
 		_fishHUD.GetComponent<Text> ().text = "x" + _totalFish.ToString ();
 
 		if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonUp("Start"))

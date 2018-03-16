@@ -1398,6 +1398,48 @@ Transform:
   m_Father: {fileID: 1757563777}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &474090688
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4781009104585294, guid: c6d51a0a407d00349b744cc7cfe983e5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781009104585294, guid: c6d51a0a407d00349b744cc7cfe983e5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781009104585294, guid: c6d51a0a407d00349b744cc7cfe983e5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781009104585294, guid: c6d51a0a407d00349b744cc7cfe983e5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781009104585294, guid: c6d51a0a407d00349b744cc7cfe983e5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781009104585294, guid: c6d51a0a407d00349b744cc7cfe983e5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781009104585294, guid: c6d51a0a407d00349b744cc7cfe983e5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781009104585294, guid: c6d51a0a407d00349b744cc7cfe983e5, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c6d51a0a407d00349b744cc7cfe983e5, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &534737001
 Prefab:
   m_ObjectHideFlags: 0
@@ -2430,6 +2472,8 @@ MonoBehaviour:
   _emptyClip: {fileID: 0}
   _reloadingClip: {fileID: 0}
   _reloadedClip: {fileID: 8300000, guid: 1e6ad8c43d06dc147b3c69ac384d3550, type: 3}
+  _currentAmmoText: {fileID: 1686208996}
+  _currentClipText: {fileID: 951520977}
   _currentClip: 0
 --- !u!82 &902963655
 AudioSource:
@@ -2498,7 +2542,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -3363,8 +3407,6 @@ MonoBehaviour:
   _fishEscaped: 0
   _maxFish: 0
   _perfectRoundAudio: {fileID: 0}
-  _ammoHUD: {fileID: 951520974}
-  _clipHUD: {fileID: 1686208993}
   _fishHUD: {fileID: 901847913}
   _ammoHUD_2: {fileID: 0}
   _fishHUD_2: {fileID: 0}
