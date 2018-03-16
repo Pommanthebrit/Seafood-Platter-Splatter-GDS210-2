@@ -56,7 +56,7 @@ public class EnemyMovementSimpleNoodle : MonoBehaviour
 		if(_moveLeft)
 			_rb.velocity = new Vector3(-_horizontalSpeed, 0.0f, 0.0f);
 		else
-			_rb.velocity = new Vector3(-_horizontalSpeed, 0.0f, 0.0f);
+			_rb.velocity = new Vector3(_horizontalSpeed, 0.0f, 0.0f);
 
 
 		_myEnemyController = GetComponent<EnemyController>();
