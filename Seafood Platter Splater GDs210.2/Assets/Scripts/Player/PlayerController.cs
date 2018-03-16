@@ -53,10 +53,9 @@ public class PlayerController : MonoBehaviour
 				TryShoot ();
 			}
 
-
+			// On Reload button press make sure: game is not paused, not reloading and not a full clip.
 			if(Input.GetButtonUp("Reload_1")  && _gg._isPaused == false && !_reloading && _currentClip < _clipSize)
 			{
-				print("What Up");
 				Invoke ("Reload", _reloadTime);
 				_reloading = true;
 			}
@@ -66,6 +65,14 @@ public class PlayerController : MonoBehaviour
 			if (Input.GetButtonUp ("Fire2") && _gg._isPaused == false) 
 			{
 				TryShoot ();
+			}
+
+			// On Reload button press make sure: game is not paused, not reloading and not a full clip.
+			if(Input.GetButtonUp("Reload_2")  && _gg._isPaused == false && !_reloading && _currentClip < _clipSize)
+			{
+				print("What Up");
+				Invoke ("Reload", _reloadTime);
+				_reloading = true;
 			}
 		}
 
@@ -101,13 +108,14 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 	}
-
+		
 	private void Reload()
 	{
+		// If there is more than enough ammo to fill full clip.
 		if(_currentAmmo > _clipSize)
 		{
-			_currentAmmo -= _clipSize - _currentClip;
-			_currentClip = _clipSize;
+			_currentAmmo -= _clipSize - _currentClip; // Gets how much is needed to make a full clip and then substracts it from _currentAmmo.
+			_currentClip = _clipSize; // Fills clip.
 
 		}
 		else
