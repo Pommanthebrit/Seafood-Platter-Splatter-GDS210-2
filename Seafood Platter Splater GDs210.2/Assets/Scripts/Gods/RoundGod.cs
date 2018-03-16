@@ -4,8 +4,6 @@ using UnityEngine;
 
 // Controls difficulty of rounds and handles round calculations such as how many Fish spawn.
 public class RoundGod : MonoBehaviour {
-	// TO-DO: Setup first 20 rounds manually
-	// TO-DO: Calculate automatic rounds after 20
 
 	[Header("Rounds")]
 	[Tooltip("Add Rounds here by first creating a round in the asset menu. (Assets>Create>Rounds>Round)")]
@@ -18,7 +16,7 @@ public class RoundGod : MonoBehaviour {
 
 	// References.
 	private GameGod _gg;
-
+	public ParticleSystem _roundBubble;
 
 
 	private void Start()
@@ -77,8 +75,8 @@ public class RoundGod : MonoBehaviour {
 		{
 			_gg.AddPerfectRoundBonus(_manualRounds[_currentRound]._perfectRoundBonus, _manualRounds[_currentRound]._perfectRoundAmmoBonus);
 		}
-
-		// Temp. Will need to be replaced with a round end event (eg. Display stat screen, sfx, etc.)
+			
+		_roundBubble.Emit (1);
 		_currentRound++;
 		if (_currentRound < _manualRounds.Length) 
 		{
