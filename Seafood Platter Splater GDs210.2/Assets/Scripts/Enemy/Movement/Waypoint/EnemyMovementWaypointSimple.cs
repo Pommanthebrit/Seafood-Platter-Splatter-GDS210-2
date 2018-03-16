@@ -77,12 +77,15 @@ public class EnemyMovementWaypointSimple : MonoBehaviour
 		if(_targetWaypointIndex < _waypoints.Length)
 		{
 			_targetWaypoint = _waypoints[_targetWaypointIndex];
+			TryFlip();
+
 		}
 		else if(_loop && _currentLoop < _loopAmount || _loop && _loopAmount == 0)
 		{
 			_currentLoop++;
 			_targetWaypointIndex = 0;
 			_targetWaypoint = _waypoints[_targetWaypointIndex];
+			TryFlip();
 		}
 		else
 		{
@@ -108,5 +111,13 @@ public class EnemyMovementWaypointSimple : MonoBehaviour
 	protected virtual void AddOtherMovement()
 	{
 		
+	}
+
+	private void TryFlip()
+	{
+		if(transform.position.x < _targetWaypoint.transform.position.x)
+			transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+		else
+			transform.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
 	}
 }
