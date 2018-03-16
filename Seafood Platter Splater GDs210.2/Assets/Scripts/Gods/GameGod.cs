@@ -27,6 +27,7 @@ public class GameGod : MonoBehaviour
 	public ParticleSystem _pauseBubble;
 	public GameObject deathEffect;
 	public GameObject Player;
+	public GameObject Player2;
 	private RoundGod _roundGod;
 	private AudioSource _audioSource;
 	private List<PlayerController> _playerControllers;
@@ -96,6 +97,10 @@ public class GameGod : MonoBehaviour
 			_soloHUD.gameObject.SetActive (false);
 			_pauseBubble.Emit (30);
 			Player.GetComponent<PlayerController>().enabled= false; //disables player controller
+			if (_playerControllers.Count > 1) {
+				Player2.GetComponent<PlayerController>().enabled= false; //disables player controller
+			}
+
 		} else {
 			_isPaused = false;
 			Time.timeScale = 1;
@@ -109,6 +114,10 @@ public class GameGod : MonoBehaviour
 	{
 		yield return new WaitForSeconds (0.3f); //wait time
 		Player.GetComponent<PlayerController>().enabled= true; //enables player controller
+		if (_playerControllers.Count > 1) {
+			Player2.GetComponent<PlayerController>().enabled= true; //enables player controller
+		}
+
 	}
 
 	public void PlayGlobal2DSound(AudioClip audioClip)

@@ -4309,7 +4309,8 @@ MonoBehaviour:
   _pauseBubble: {fileID: 126671888}
   deathEffect: {fileID: 1022420353895396, guid: b87730406462201498db155290ff5006,
     type: 2}
-  Player: {fileID: 0}
+  Player: {fileID: 902963651}
+  Player2: {fileID: 111281840}
 --- !u!4 &1287715819
 Transform:
   m_ObjectHideFlags: 0
