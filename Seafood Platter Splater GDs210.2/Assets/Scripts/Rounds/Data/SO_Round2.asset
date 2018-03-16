@@ -9,20 +9,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31e52175f9b927743a42084aed7774de, type: 3}
-  m_Name: SO_Round1
+  m_Name: SO_Round2
   m_EditorClassIdentifier: 
-  _perfectRoundBonus: 10
-  _perfectRoundAmmoBonus: 10
+  _perfectRoundBonus: 0
+  _perfectRoundAmmoBonus: 0
   _fishSpawnerControllers:
   - _gg: {fileID: 0}
     _mySpawnPoint: {fileID: 114650133431942478, guid: b1430546b8afbc14d86b7fc159821de7,
       type: 2}
     _fishToSpawn:
-    - _spawnFrequency: 5
-      _fishSpawnAmount: 2
-      _fishPrefab: {fileID: 1910034098090728, guid: 755c974a6a9530043a549153200b834e,
+    - _spawnFrequency: 8
+      _fishSpawnAmount: 3
+      _fishPrefab: {fileID: 1140759063220138, guid: c6d51a0a407d00349b744cc7cfe983e5,
         type: 2}
-    - _spawnFrequency: 13
-      _fishSpawnAmount: 1
-      _fishPrefab: {fileID: 1910034098090728, guid: 755c974a6a9530043a549153200b834e,
+  - _gg: {fileID: 0}
+    _mySpawnPoint: {fileID: 114650133431942478, guid: 66b5c94f1dc2163478fedaf255983351,
+      type: 2}
+    _fishToSpawn:
+    - _spawnFrequency: 3
+      _fishSpawnAmount: 2
+      _fishPrefab: {fileID: 1140759063220138, guid: e0f9a37945604cc4aa43bee001fe8922,
         type: 2}
