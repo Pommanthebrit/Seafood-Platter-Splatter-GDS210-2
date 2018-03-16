@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
 			}
 
 			// On Reload button press make sure: game is not paused, not reloading and not a full clip.
-			if(Input.GetButtonUp("Reload_1")  && _gg._isPaused == false && !_reloading && _currentClip < _clipSize)
+			if(Input.GetButtonUp("Reload_1")  && _gg._isPaused == false && !_reloading && _currentClip < _clipSize && _currentAmmo > 0)
 			{
 				Invoke ("Reload", _reloadTime);
 				_reloading = true;
