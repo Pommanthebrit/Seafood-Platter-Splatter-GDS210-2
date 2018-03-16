@@ -16,14 +16,11 @@ public class GameGod : MonoBehaviour
 
 	[Header("Sounds")]
 	[SerializeField] private AudioClip _perfectRoundAudio;
+	[SerializeField] private AudioClip coinJingle;
 
 	//UI Elements
 	[Header("UI Elements")]
-//	[SerializeField] private GameObject _ammoHUD;
-//	[SerializeField] private GameObject _clipHUD;
-	[SerializeField] private GameObject _fishHUD;
-	[SerializeField] private GameObject _ammoHUD_2;
-	[SerializeField] private GameObject _fishHUD_2;
+	[SerializeField] private GameObject _fishHUD, _escapedFishHUD, _roundCounter;
 	public Transform _pauseMenu, _soloHUD;
 	public Button PlayBtn;
 	[HideInInspector] public bool _isPaused = false;
@@ -78,9 +75,9 @@ public class GameGod : MonoBehaviour
 	{
 		//Debug.Log("Total Fish GG: " + _totalFish);
 
-//		_ammoHUD.GetComponent<Text> ().text = "x" + _playerControllers[0]._currentAmmo.ToString (); // Player one current ammo
-//		_clipHUD.GetComponent<Text> ().text = "x" + _playerControllers[0]._currentClip.ToString (); // Player one current clip
 		_fishHUD.GetComponent<Text> ().text = "x" + _totalFish.ToString ();
+		_escapedFishHUD.GetComponent<Text> ().text = "x" + _fishEscaped.ToString ();
+		_roundCounter.GetComponent<Text> ().text = _roundGod._currentRound.ToString ();
 
 		if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonUp("Start"))
 		{
@@ -148,6 +145,8 @@ public class GameGod : MonoBehaviour
 
 	public void AddScore(int score, int playerID)
 	{
+		_audioSource.PlayOneShot (coinJingle);
+
 		_playerControllers[playerID - 1]._currentScore += score;
 		print("Player " + playerID + ": " + _playerControllers[playerID - 1]._currentScore);
 //		_currentScore += score;

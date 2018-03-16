@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
 
 	[Header("Audio Settings")]
 	[SerializeField] private AudioClip _emptyClip;
-	[SerializeField] private AudioClip _reloadingClip;
 	[SerializeField] private AudioClip _reloadedClip;
 
 	[Header("UI Settings")]
@@ -97,7 +96,7 @@ public class PlayerController : MonoBehaviour
 		{
 			if(_currentAmmo == 0 && _currentClip == 0)
 			{
-//					PlaySound(_emptyClip);
+				_audioSource.PlayOneShot (_emptyClip);
 			}
 			else
 			{
