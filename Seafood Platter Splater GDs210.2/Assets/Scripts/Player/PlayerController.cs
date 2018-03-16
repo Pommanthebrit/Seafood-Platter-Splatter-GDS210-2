@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
 public class PlayerController : MonoBehaviour 
@@ -18,8 +19,12 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private AudioClip _reloadingClip;
 	[SerializeField] private AudioClip _reloadedClip;
 
+	[Header("UI Settings")]
+	[SerializeField] private Text _currentAmmoText;
+	[SerializeField] private Text _currentClipText;
+
 	private AudioSource _audioSource;
-	public int _currentClip;
+	[HideInInspector] public int _currentClip;
 	private bool _reloading;
 
 	private GunController _myGunController;
@@ -29,6 +34,11 @@ public class PlayerController : MonoBehaviour
 		_audioSource = GetComponent<AudioSource>();
 		_myGunController = GetComponentInChildren<GunController>();
 		gameObject.GetComponent<GunLookAtMouse>()._playerID = _playerID;
+
+		// Ammo UI element references.
+		_currentAmmoText = _currentAmmoText.GetComponent<Text>();
+		_currentClipText = _currentClipText.GetComponent<Text>();
+
 		_currentClip = _clipSize;
 		_reloading = false;
 	}
@@ -58,6 +68,10 @@ public class PlayerController : MonoBehaviour
 				TryShoot ();
 			}
 		}
+
+		// Sets UI text to show correct values.
+		_currentAmmoText.text = _currentAmmo.ToString();
+		_currentClipText.text = _currentClip.ToString();
 	}
 
 	private void CheckReload() //function for checking if the gun needs to reload

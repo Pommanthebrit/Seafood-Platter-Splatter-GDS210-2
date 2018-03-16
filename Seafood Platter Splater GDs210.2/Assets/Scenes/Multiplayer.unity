@@ -156,7 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc9d97df7006b98478d7b0b46245f520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gg: {fileID: 0}
   _bulletPrefab: {fileID: 1797415489871878, guid: 962b099a887633a4ebb576aa7285e623,
     type: 2}
   _spawnTransform: {fileID: 1418925598}
@@ -942,6 +941,8 @@ MonoBehaviour:
   _emptyClip: {fileID: 0}
   _reloadingClip: {fileID: 0}
   _reloadedClip: {fileID: 8300000, guid: 1e6ad8c43d06dc147b3c69ac384d3550, type: 3}
+  _currentAmmoText: {fileID: 1102473432}
+  _currentClipText: {fileID: 1766031084}
   _currentClip: 0
 --- !u!82 &111281844
 AudioSource:
@@ -1010,7 +1011,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1139,7 +1140,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2921,6 +2922,8 @@ MonoBehaviour:
   _emptyClip: {fileID: 0}
   _reloadingClip: {fileID: 0}
   _reloadedClip: {fileID: 8300000, guid: 1e6ad8c43d06dc147b3c69ac384d3550, type: 3}
+  _currentAmmoText: {fileID: 51664176}
+  _currentClipText: {fileID: 1401710213}
   _currentClip: 0
 --- !u!82 &902963655
 AudioSource:
@@ -2989,7 +2992,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -3898,6 +3901,7 @@ MonoBehaviour:
   _pauseBubble: {fileID: 126671888}
   deathEffect: {fileID: 1022420353895396, guid: b87730406462201498db155290ff5006,
     type: 2}
+  Player: {fileID: 0}
 --- !u!4 &1287715819
 Transform:
   m_ObjectHideFlags: 0
@@ -5329,7 +5333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc9d97df7006b98478d7b0b46245f520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gg: {fileID: 0}
   _bulletPrefab: {fileID: 1797415489871878, guid: 962b099a887633a4ebb576aa7285e623,
     type: 2}
   _spawnTransform: {fileID: 1040299317}
