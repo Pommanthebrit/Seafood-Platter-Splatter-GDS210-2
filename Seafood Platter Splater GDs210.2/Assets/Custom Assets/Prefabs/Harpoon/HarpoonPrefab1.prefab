@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4446469009649836}
   - component: {fileID: 33084070600798722}
   - component: {fileID: 23437997748295604}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pasted__pCube7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4910634653998884}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pasted__pCube6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4670726288827980}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pasted__pCylinder3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4072200801178478}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pasted__transform9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 114033720509425584}
   - component: {fileID: 136477654510152644}
   - component: {fileID: 82157342706859156}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HarpoonPrefab1
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4284124859611568}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pasted__transform10
   m_TagString: Untagged
   m_Icon: {fileID: 0}

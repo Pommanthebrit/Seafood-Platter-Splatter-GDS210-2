@@ -10,6 +10,7 @@ public class SimpleBulletController : MonoBehaviour
 	[SerializeField] private float _destroyTime;
 	private Rigidbody _rb;
 	public Vector3 controllerPos;
+    private GameObject _targetFish;
 
 	private void Start()
 	{
@@ -18,16 +19,28 @@ public class SimpleBulletController : MonoBehaviour
 		Vector3 mousePos = c.ScreenToWorldPoint(new Vector3(controllerPos.x, controllerPos.y, 20f));
 		_rb.AddForce((mousePos - transform.position).normalized * _speed, ForceMode.VelocityChange);
 
-		Invoke("Destroy", _destroyTime);
+		//Invoke("Destroy", _destroyTime);
 	}
 
 	private void OnCollisionEnter(Collision other)
 	{
-		Destroy(this.gameObject);
+        transform.parent = other.transform;
+        transform.position = other.transform.position;
+        transform.rotation = other.transform.rotation;
+        _targetFish = other.gameObject;
+        _rb.velocity = Vector3.zero;
 	}
 
 	private void Destroy()
 	{
 		Destroy(this.gameObject);
 	}
+
+    private void Update()
+    {
+        if(_targetFish != null)
+        {
+            transform.position = _targetFish.transform.position;
+        }
+    }
 }

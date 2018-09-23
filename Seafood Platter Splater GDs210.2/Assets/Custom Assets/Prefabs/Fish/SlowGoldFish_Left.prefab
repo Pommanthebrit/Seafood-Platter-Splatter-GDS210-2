@@ -411,6 +411,8 @@ MonoBehaviour:
   _health: 1
   _scoreWorth: 5
   _endangered: 0
+  _bloodEffect: {fileID: 1022420353895396, guid: 911e2d2a7d65a7f43ab3cc249ae3b2a2,
+    type: 2}
 --- !u!114 &114859192415741538
 MonoBehaviour:
   m_ObjectHideFlags: 1

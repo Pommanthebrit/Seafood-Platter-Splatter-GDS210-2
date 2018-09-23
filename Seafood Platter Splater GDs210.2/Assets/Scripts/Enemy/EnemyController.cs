@@ -8,6 +8,8 @@ public class EnemyController : MonoBehaviour
 	[SerializeField] private int _health;
 	[SerializeField] private int _scoreWorth;
 	[SerializeField] private bool _endangered;
+    [SerializeField] private GameObject _bloodEffect;
+    private bool _isDead;
 
 	// When a collision happens.
 	private void OnCollisionEnter(Collision other)
@@ -32,9 +34,10 @@ public class EnemyController : MonoBehaviour
 	// Destroys Enemy and Adds score.
 	private void Die(int bulletPlayerID)
 	{
-		Instantiate(_gg.deathEffect, gameObject.transform.position, gameObject.transform.rotation);
-		Destroy(transform.parent.gameObject);
-		if(_endangered)
+        gameObject.layer = 0;
+		Instantiate(_gg.deathEffect, gameObject.transform.position, gameObject.transform.rotation, transform);
+        Instantiate(_bloodEffect, gameObject.transform.position, gameObject.transform.rotation, transform);
+        if(_endangered)
 		{
 			_gg.ConfirmFishDeath(-_scoreWorth, bulletPlayerID);
 		}

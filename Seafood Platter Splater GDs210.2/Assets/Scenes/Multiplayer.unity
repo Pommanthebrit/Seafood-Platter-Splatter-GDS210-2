@@ -4365,7 +4365,7 @@ MonoBehaviour:
   PlayBtn: {fileID: 338813641}
   _isPaused: 0
   _pauseBubble: {fileID: 126671888}
-  deathEffect: {fileID: 1022420353895396, guid: b87730406462201498db155290ff5006,
+  deathEffect: {fileID: 1022420353895396, guid: 911e2d2a7d65a7f43ab3cc249ae3b2a2,
     type: 2}
   Player: {fileID: 902963651}
   Player2: {fileID: 111281840}
@@ -4476,6 +4476,11 @@ MonoBehaviour:
   _manualRounds:
   - {fileID: 11400000, guid: a784e433175e7ac47835f1e8954eb02f, type: 2}
   - {fileID: 11400000, guid: ba0d99678dc865f41a556d6b931683a6, type: 2}
+  - {fileID: 11400000, guid: 2a2c14430fdbbcb4e824e00190b11dde, type: 2}
+  - {fileID: 11400000, guid: a634d3559dcdae34aa416013d3feb5cb, type: 2}
+  - {fileID: 11400000, guid: d624400d78444e24bb2d5b449630c69a, type: 2}
+  - {fileID: 11400000, guid: e4240d128b2b7cf488ca415cb8389ea3, type: 2}
+  - {fileID: 11400000, guid: b4474299a4daaaf44878003b974a32cb, type: 2}
   _currentRound: 0
   _fishLeftToSpawn: 0
   _roundBubble: {fileID: 1496844506}
